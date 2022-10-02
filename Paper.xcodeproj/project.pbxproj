@@ -16,6 +16,15 @@
 		779AC88F28E8E6FB006C4ACE /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = 779AC88E28E8E6FB006C4ACE /* Then */; };
 		779AC89228E8E764006C4ACE /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 779AC89128E8E764006C4ACE /* Moya */; };
 		779AC89428E959DD006C4ACE /* IntroViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 779AC89328E959DC006C4ACE /* IntroViewModel.swift */; };
+		779AC8B328E976AE006C4ACE /* Pretendard-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 779AC8B028E96038006C4ACE /* Pretendard-Bold.ttf */; };
+		779AC8B428E976B1006C4ACE /* Pretendard-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 779AC8AC28E96038006C4ACE /* Pretendard-Black.ttf */; };
+		779AC8B528E976B5006C4ACE /* Pretendard-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 779AC8A828E96037006C4ACE /* Pretendard-ExtraBold.ttf */; };
+		779AC8B628E976B8006C4ACE /* Pretendard-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 779AC8AF28E96038006C4ACE /* Pretendard-ExtraLight.ttf */; };
+		779AC8B728E976BA006C4ACE /* Pretendard-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 779AC8AB28E96038006C4ACE /* Pretendard-Light.ttf */; };
+		779AC8B828E976BD006C4ACE /* Pretendard-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 779AC8AE28E96038006C4ACE /* Pretendard-Medium.ttf */; };
+		779AC8B928E976BF006C4ACE /* Pretendard-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 779AC8A928E96038006C4ACE /* Pretendard-Regular.ttf */; };
+		779AC8BA28E976C2006C4ACE /* Pretendard-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 779AC8AD28E96038006C4ACE /* Pretendard-SemiBold.ttf */; };
+		779AC8BB28E976C4006C4ACE /* Pretendard-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 779AC8AA28E96038006C4ACE /* Pretendard-Thin.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +36,15 @@
 		7743A41F28BE07280089B473 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7743A42128BE07280089B473 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		779AC89328E959DC006C4ACE /* IntroViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroViewModel.swift; sourceTree = "<group>"; };
+		779AC8A828E96037006C4ACE /* Pretendard-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-ExtraBold.ttf"; sourceTree = "<group>"; };
+		779AC8A928E96038006C4ACE /* Pretendard-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Regular.ttf"; sourceTree = "<group>"; };
+		779AC8AA28E96038006C4ACE /* Pretendard-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Thin.ttf"; sourceTree = "<group>"; };
+		779AC8AB28E96038006C4ACE /* Pretendard-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Light.ttf"; sourceTree = "<group>"; };
+		779AC8AC28E96038006C4ACE /* Pretendard-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Black.ttf"; sourceTree = "<group>"; };
+		779AC8AD28E96038006C4ACE /* Pretendard-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-SemiBold.ttf"; sourceTree = "<group>"; };
+		779AC8AE28E96038006C4ACE /* Pretendard-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Medium.ttf"; sourceTree = "<group>"; };
+		779AC8AF28E96038006C4ACE /* Pretendard-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-ExtraLight.ttf"; sourceTree = "<group>"; };
+		779AC8B028E96038006C4ACE /* Pretendard-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Bold.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +80,7 @@
 		7743A41228BE07260089B473 /* Paper */ = {
 			isa = PBXGroup;
 			children = (
+				779AC8A728E96029006C4ACE /* font */,
 				7743A41328BE07260089B473 /* AppDelegate.swift */,
 				7743A41528BE07260089B473 /* SceneDelegate.swift */,
 				7743A41728BE07260089B473 /* IntroViewController.swift */,
@@ -71,6 +90,22 @@
 				779AC89328E959DC006C4ACE /* IntroViewModel.swift */,
 			);
 			path = Paper;
+			sourceTree = "<group>";
+		};
+		779AC8A728E96029006C4ACE /* font */ = {
+			isa = PBXGroup;
+			children = (
+				779AC8AC28E96038006C4ACE /* Pretendard-Black.ttf */,
+				779AC8B028E96038006C4ACE /* Pretendard-Bold.ttf */,
+				779AC8A828E96037006C4ACE /* Pretendard-ExtraBold.ttf */,
+				779AC8AF28E96038006C4ACE /* Pretendard-ExtraLight.ttf */,
+				779AC8AB28E96038006C4ACE /* Pretendard-Light.ttf */,
+				779AC8AE28E96038006C4ACE /* Pretendard-Medium.ttf */,
+				779AC8A928E96038006C4ACE /* Pretendard-Regular.ttf */,
+				779AC8AD28E96038006C4ACE /* Pretendard-SemiBold.ttf */,
+				779AC8AA28E96038006C4ACE /* Pretendard-Thin.ttf */,
+			);
+			path = font;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -141,8 +176,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				779AC8B828E976BD006C4ACE /* Pretendard-Medium.ttf in Resources */,
 				7743A42028BE07280089B473 /* LaunchScreen.storyboard in Resources */,
+				779AC8BA28E976C2006C4ACE /* Pretendard-SemiBold.ttf in Resources */,
+				779AC8B328E976AE006C4ACE /* Pretendard-Bold.ttf in Resources */,
+				779AC8B528E976B5006C4ACE /* Pretendard-ExtraBold.ttf in Resources */,
+				779AC8B628E976B8006C4ACE /* Pretendard-ExtraLight.ttf in Resources */,
+				779AC8B928E976BF006C4ACE /* Pretendard-Regular.ttf in Resources */,
 				7743A41D28BE07280089B473 /* Assets.xcassets in Resources */,
+				779AC8BB28E976C4006C4ACE /* Pretendard-Thin.ttf in Resources */,
+				779AC8B428E976B1006C4ACE /* Pretendard-Black.ttf in Resources */,
+				779AC8B728E976BA006C4ACE /* Pretendard-Light.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
