@@ -5,6 +5,7 @@
 	<key>UIAppFonts</key>
 	<array>
 		<string>Pretendard-Bold.ttf</string>
+		<string>Pretendard-ExtraBold.ttf</string>
 	</array>
 	<key>UIApplicationSceneManifest</key>
 	<dict>

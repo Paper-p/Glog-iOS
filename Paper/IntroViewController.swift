@@ -20,6 +20,7 @@ class IntroViewController: UIViewController {
         setLayout()
     }
     
+    
     let underText = UILabel().then {
         $0.text = "여기서 너의 생각을 \n 남들에게 이야기해봐"
         $0.numberOfLines = 2
@@ -32,12 +33,25 @@ class IntroViewController: UIViewController {
         $0.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.52)
         $0.layer.cornerRadius = 112
     }
+    lazy var loginButton = UIButton().then {
+        let text = NSAttributedString(string: "로그인")
+        $0.setAttributedTitle(text, for: .normal)
+        $0.titleLabel?.font = UIFont(name: "Pretendard-ExtraBold", size: 18)
+        $0.setTitleColor(UIColor.white, for: .normal)
+        $0.layer.cornerRadius = 10
+    }
+    
+    let gradient = CAGradientLayer()
+    gradient.frame = loginButton.bounds
+    gradient.colors = [UIColor.orange.cgColor, UIColor.red.cgColor]
+    loginButton.layer.addSublayer(gradient)
     
     private func addView() {
         [backgroundView,underText].forEach {
             view.addSubview($0)
         }
     }
+    
     
     private func setLayout() {
         backgroundView.snp.makeConstraints {
