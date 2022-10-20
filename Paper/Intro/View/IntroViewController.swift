@@ -71,17 +71,17 @@ class IntroViewController: UIViewController {
         $0.layer.borderWidth = 1
         $0.layer.borderColor = UIColor.Gradient2!.cgColor
         $0.layer.cornerRadius = 10
+        $0.rx.tap
+            .bind(with: self) { owner, _ in
+                self.coordinator?.pushSignInVC()
+            }
+            .disposed(by: disposeBag)
     }
     
     private func addView() {
         [backgroundView,underText,loginButton,signUpButton,logo].forEach {
             view.addSubview($0)
         }
-        signUpButton.rx.tap
-            .bind(with: self) { owner, _ in
-                self.coordinator?.pushSignInVc()
-            }
-            .disposed(by: disposeBag)
     }
     
     

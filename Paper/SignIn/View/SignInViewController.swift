@@ -7,10 +7,12 @@
 
 import UIKit
 
-class SiginInViewController: UIViewController {
+class SignInViewController: UIViewController {
+    weak var coordinator: SignInCoordinator?
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .yellow
 
     }
 
