@@ -22,4 +22,7 @@ class IntroCoordinator : Coordinator {
         introVC.coordinator = self
         nav.pushViewController(introVC, animated: true)
     }
+    func pushSignInVc() {
+        
+    }
 }

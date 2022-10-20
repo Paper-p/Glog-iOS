@@ -79,7 +79,7 @@ class IntroViewController: UIViewController {
         }
         signUpButton.rx.tap
             .bind(with: self) { owner, _ in
-                print("Hello World")
+                self.coordinator?.pushSignInVc()
             }
             .disposed(by: disposeBag)
     }
