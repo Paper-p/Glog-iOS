@@ -8,9 +8,14 @@
 import UIKit
 import Then
 import SnapKit
+import RxSwift
+import RxCocoa
 
 class IntroViewController: UIViewController {
-
+    weak var coordinator: IntroCoordinator?
+    
+    let disposeBag = DisposeBag()
+    
     private let bounds = UIScreen.main.bounds
     
     override func viewDidLoad() {
@@ -72,6 +77,11 @@ class IntroViewController: UIViewController {
         [backgroundView,underText,loginButton,signUpButton,logo].forEach {
             view.addSubview($0)
         }
+        signUpButton.rx.tap
+            .bind(with: self) { owner, _ in
+                print("Hello World")
+            }
+            .disposed(by: disposeBag)
     }
     
     

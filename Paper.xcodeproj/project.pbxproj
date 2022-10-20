@@ -13,10 +13,13 @@
 		7743A41D28BE07280089B473 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7743A41C28BE07280089B473 /* Assets.xcassets */; };
 		7743A42028BE07280089B473 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7743A41E28BE07280089B473 /* LaunchScreen.storyboard */; };
 		7756F2D328FFEBB500F22B4C /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7756F2D228FFEBB400F22B4C /* Coordinator.swift */; };
+		7756F2D72900CA5000F22B4C /* IntroCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7756F2D62900CA5000F22B4C /* IntroCoordinator.swift */; };
+		7756F2DB2900E88B00F22B4C /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 7756F2DA2900E88B00F22B4C /* RxCocoa */; };
+		7756F2DD2900E88B00F22B4C /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 7756F2DC2900E88B00F22B4C /* RxSwift */; };
 		779AC88C28E8E6EE006C4ACE /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 779AC88B28E8E6EE006C4ACE /* SnapKit */; };
 		779AC88F28E8E6FB006C4ACE /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = 779AC88E28E8E6FB006C4ACE /* Then */; };
 		779AC89228E8E764006C4ACE /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 779AC89128E8E764006C4ACE /* Moya */; };
-		779AC89428E959DD006C4ACE /* IntroViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 779AC89328E959DC006C4ACE /* IntroViewModel.swift */; };
+		779AC89428E959DD006C4ACE /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 779AC89328E959DC006C4ACE /* LoginViewModel.swift */; };
 		779AC8B328E976AE006C4ACE /* Pretendard-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 779AC8B028E96038006C4ACE /* Pretendard-Bold.ttf */; };
 		779AC8B428E976B1006C4ACE /* Pretendard-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 779AC8AC28E96038006C4ACE /* Pretendard-Black.ttf */; };
 		779AC8B528E976B5006C4ACE /* Pretendard-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 779AC8A828E96037006C4ACE /* Pretendard-ExtraBold.ttf */; };
@@ -37,7 +40,8 @@
 		7743A41F28BE07280089B473 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7743A42128BE07280089B473 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7756F2D228FFEBB400F22B4C /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
-		779AC89328E959DC006C4ACE /* IntroViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroViewModel.swift; sourceTree = "<group>"; };
+		7756F2D62900CA5000F22B4C /* IntroCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroCoordinator.swift; sourceTree = "<group>"; };
+		779AC89328E959DC006C4ACE /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		779AC8A828E96037006C4ACE /* Pretendard-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-ExtraBold.ttf"; sourceTree = "<group>"; };
 		779AC8A928E96038006C4ACE /* Pretendard-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Regular.ttf"; sourceTree = "<group>"; };
 		779AC8AA28E96038006C4ACE /* Pretendard-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Thin.ttf"; sourceTree = "<group>"; };
@@ -56,6 +60,8 @@
 			files = (
 				779AC88C28E8E6EE006C4ACE /* SnapKit in Frameworks */,
 				779AC88F28E8E6FB006C4ACE /* Then in Frameworks */,
+				7756F2DD2900E88B00F22B4C /* RxSwift in Frameworks */,
+				7756F2DB2900E88B00F22B4C /* RxCocoa in Frameworks */,
 				779AC89228E8E764006C4ACE /* Moya in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -98,7 +104,7 @@
 		7756F2D028FFCABD00F22B4C /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				779AC89328E959DC006C4ACE /* IntroViewModel.swift */,
+				779AC89328E959DC006C4ACE /* LoginViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -114,6 +120,7 @@
 		7756F2D4290017F600F22B4C /* Coordinator */ = {
 			isa = PBXGroup;
 			children = (
+				7756F2D82900CA5900F22B4C /* Intro */,
 				7756F2D52900180000F22B4C /* Protocol */,
 			);
 			path = Coordinator;
@@ -125,6 +132,14 @@
 				7756F2D228FFEBB400F22B4C /* Coordinator.swift */,
 			);
 			path = Protocol;
+			sourceTree = "<group>";
+		};
+		7756F2D82900CA5900F22B4C /* Intro */ = {
+			isa = PBXGroup;
+			children = (
+				7756F2D62900CA5000F22B4C /* IntroCoordinator.swift */,
+			);
+			path = Intro;
 			sourceTree = "<group>";
 		};
 		779AC8A728E96029006C4ACE /* font */ = {
@@ -163,6 +178,8 @@
 				779AC88B28E8E6EE006C4ACE /* SnapKit */,
 				779AC88E28E8E6FB006C4ACE /* Then */,
 				779AC89128E8E764006C4ACE /* Moya */,
+				7756F2DA2900E88B00F22B4C /* RxCocoa */,
+				7756F2DC2900E88B00F22B4C /* RxSwift */,
 			);
 			productName = Paper;
 			productReference = 7743A41028BE07260089B473 /* Paper.app */;
@@ -196,6 +213,7 @@
 				779AC88A28E8E6EE006C4ACE /* XCRemoteSwiftPackageReference "SnapKit" */,
 				779AC88D28E8E6FB006C4ACE /* XCRemoteSwiftPackageReference "Then" */,
 				779AC89028E8E764006C4ACE /* XCRemoteSwiftPackageReference "Moya" */,
+				7756F2D92900E88B00F22B4C /* XCRemoteSwiftPackageReference "RxSwift" */,
 			);
 			productRefGroup = 7743A41128BE07260089B473 /* Products */;
 			projectDirPath = "";
@@ -233,10 +251,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				7743A41828BE07260089B473 /* IntroViewController.swift in Sources */,
+				7756F2D72900CA5000F22B4C /* IntroCoordinator.swift in Sources */,
 				7743A41428BE07260089B473 /* AppDelegate.swift in Sources */,
 				7756F2D328FFEBB500F22B4C /* Coordinator.swift in Sources */,
 				7743A41628BE07260089B473 /* SceneDelegate.swift in Sources */,
-				779AC89428E959DD006C4ACE /* IntroViewModel.swift in Sources */,
+				779AC89428E959DD006C4ACE /* LoginViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -444,6 +463,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		7756F2D92900E88B00F22B4C /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 		779AC88A28E8E6EE006C4ACE /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit";
@@ -471,6 +498,16 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		7756F2DA2900E88B00F22B4C /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7756F2D92900E88B00F22B4C /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+		7756F2DC2900E88B00F22B4C /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7756F2D92900E88B00F22B4C /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
+		};
 		779AC88B28E8E6EE006C4ACE /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 779AC88A28E8E6EE006C4ACE /* XCRemoteSwiftPackageReference "SnapKit" */;
