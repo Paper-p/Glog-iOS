@@ -41,6 +41,10 @@ class IntroViewController: UIViewController {
         $0.font = UIFont(name: "Pretendard-Bold", size: 18)
     }
     
+    let logo = UIImageView().then {
+        $0.image = UIImage(named: "Logo.svg")
+    }
+    
     
     let backgroundView = UIView().then {
         $0.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.52)
@@ -65,7 +69,7 @@ class IntroViewController: UIViewController {
     }
     
     private func addView() {
-        [backgroundView,underText,loginButton,signUpButton].forEach {
+        [backgroundView,underText,loginButton,signUpButton,logo].forEach {
             view.addSubview($0)
         }
     }
@@ -93,6 +97,10 @@ class IntroViewController: UIViewController {
             $0.top.equalTo(loginButton.snp.bottom).offset(16)
             $0.height.equalTo((bounds.height) / 12.78)
             $0.width.equalTo((bounds.width) / 1.06)
+        }
+        logo.snp.makeConstraints {
+            $0.centerX.equalToSuperview()
+            $0.top.equalTo(backgroundView.snp.top).offset((bounds.height) / 8.97)
         }
     }
     
