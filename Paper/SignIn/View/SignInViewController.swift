@@ -8,7 +8,7 @@
 import UIKit
 
 class SignInViewController: UIViewController {
-    weak var coordinator: SignInCoordinator?
+    weak var coordinator: IntroCoordinator?
 
     override func viewDidLoad() {
         super.viewDidLoad()

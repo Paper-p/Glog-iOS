@@ -18,7 +18,6 @@
 		7756F2DD2900E88B00F22B4C /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 7756F2DC2900E88B00F22B4C /* RxSwift */; };
 		7756F2E22901354500F22B4C /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7756F2E12901354500F22B4C /* SignInViewController.swift */; };
 		7756F2E52901358D00F22B4C /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7756F2E42901358D00F22B4C /* SignInViewModel.swift */; };
-		7756F2E82901370000F22B4C /* SignInCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7756F2E72901370000F22B4C /* SignInCoordinator.swift */; };
 		779AC88C28E8E6EE006C4ACE /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 779AC88B28E8E6EE006C4ACE /* SnapKit */; };
 		779AC88F28E8E6FB006C4ACE /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = 779AC88E28E8E6FB006C4ACE /* Then */; };
 		779AC89228E8E764006C4ACE /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 779AC89128E8E764006C4ACE /* Moya */; };
@@ -46,7 +45,6 @@
 		7756F2D62900CA5000F22B4C /* IntroCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroCoordinator.swift; sourceTree = "<group>"; };
 		7756F2E12901354500F22B4C /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		7756F2E42901358D00F22B4C /* SignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
-		7756F2E72901370000F22B4C /* SignInCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInCoordinator.swift; sourceTree = "<group>"; };
 		779AC89328E959DC006C4ACE /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		779AC8A828E96037006C4ACE /* Pretendard-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-ExtraBold.ttf"; sourceTree = "<group>"; };
 		779AC8A928E96038006C4ACE /* Pretendard-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Regular.ttf"; sourceTree = "<group>"; };
@@ -186,7 +184,6 @@
 		7756F2E6290136F100F22B4C /* SignIn */ = {
 			isa = PBXGroup;
 			children = (
-				7756F2E72901370000F22B4C /* SignInCoordinator.swift */,
 			);
 			path = SignIn;
 			sourceTree = "<group>";
@@ -303,7 +300,6 @@
 				7743A41828BE07260089B473 /* IntroViewController.swift in Sources */,
 				7756F2D72900CA5000F22B4C /* IntroCoordinator.swift in Sources */,
 				7743A41428BE07260089B473 /* AppDelegate.swift in Sources */,
-				7756F2E82901370000F22B4C /* SignInCoordinator.swift in Sources */,
 				7756F2E52901358D00F22B4C /* SignInViewModel.swift in Sources */,
 				7756F2D328FFEBB500F22B4C /* Coordinator.swift in Sources */,
 				7743A41628BE07260089B473 /* SceneDelegate.swift in Sources */,

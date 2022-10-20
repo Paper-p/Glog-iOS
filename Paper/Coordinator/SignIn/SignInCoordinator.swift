@@ -7,19 +7,19 @@
 
 import UIKit
 
-
-class SignInCoordinator : Coordinator {
-    var childCoordinators: [Coordinator] = []
-    weak var parentCoordinator: IntroCoordinator?
-    var nav: UINavigationController
-    
-    init(nav:UINavigationController) {
-        self.nav = nav
-    }
-    
+class SignInCoordinator:Coordinator {
     func start() {
-        let signInVC = SignInViewController()
-        signInVC.coordinator = self
-        nav.pushViewController(signInVC, animated: true)
+    
     }
+    
+    var navigationController: UINavigationController
+    var childCoordinators = [Coordinator]()
+    
+    
+    
+    init(navigationController:UINavigationController) {
+        self.navigationController = navigationController
+    }
+    
+    
 }

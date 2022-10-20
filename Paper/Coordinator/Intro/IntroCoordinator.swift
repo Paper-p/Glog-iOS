@@ -9,23 +9,29 @@ import UIKit
 
 
 class IntroCoordinator : Coordinator {
-    var childCoordinators: [Coordinator] = []
+    var childCoordinators = [Coordinator]()
+    var navigationController: UINavigationController
+    let window: UIWindow
     
-    var nav: UINavigationController
     
-    init(nav:UINavigationController) {
-        self.nav = nav
+    init(navigationController: UINavigationController, window: UIWindow) {
+        self.navigationController = navigationController
+        self.window = window
+        window.rootViewController = navigationController
     }
     
     func start() {
-        let introVC = IntroViewController()
-        introVC.coordinator = self
-        nav.pushViewController(introVC, animated: true)
+        let introVC = IntroViewController(coordinator: self)
+        navigationController.setViewControllers([introVC], animated: true)
     }
     func pushSignInVC() {
-        let signInCoordinator = SignInCoordinator(nav: nav)
-        signInCoordinator.parentCoordinator = self
-        childCoordinators.append(signInCoordinator)
-        signInCoordinator.start()
+//        navigationController.setViewControllers([], animated: true)
+        let signInVC = SignInViewController()
+        signInVC.coordinator = self
+        navigationController.pushViewController(signInVC, animated: true)
+//        navigationController.setViewControllers([signInVC], animated: true)
+//        let test = SignInViewController()
+//        test.modalPresentationStyle = .fullScreen
+//        navigationController.pushViewController(test, animated: true)
     }
 }

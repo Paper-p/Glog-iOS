@@ -11,12 +11,26 @@ import SnapKit
 import RxSwift
 import RxCocoa
 
-class IntroViewController: UIViewController {
-    weak var coordinator: IntroCoordinator?
+final class IntroViewController: UIViewController {
+    let coordinator: IntroCoordinator
     
     let disposeBag = DisposeBag()
     
     private let bounds = UIScreen.main.bounds
+    
+    init(coordinator: IntroCoordinator) {
+        self.coordinator = coordinator
+        super.init(nibName: nil, bundle: nil)
+        
+    }
+
+    deinit {
+        print("Intro Deinit")
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -73,7 +87,8 @@ class IntroViewController: UIViewController {
         $0.layer.cornerRadius = 10
         $0.rx.tap
             .bind(with: self) { owner, _ in
-                self.coordinator?.pushSignInVC()
+                owner.coordinator.pushSignInVC()
+                print(owner.coordinator)
             }
             .disposed(by: disposeBag)
     }
@@ -83,7 +98,6 @@ class IntroViewController: UIViewController {
             view.addSubview($0)
         }
     }
-    
     
     private func setLayout() {
         backgroundView.snp.makeConstraints {
