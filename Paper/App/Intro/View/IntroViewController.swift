@@ -11,7 +11,7 @@ import SnapKit
 import RxSwift
 import RxCocoa
 
-final class IntroViewController: UIViewController {
+final class IntroViewController: BaseViewController {
     let coordinator: IntroCoordinator
     
     let disposeBag = DisposeBag()
@@ -32,13 +32,13 @@ final class IntroViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        view.backgroundColor = .backgroundColor
-        
-        addView()
-        setLayout()
-    }
+//    override func viewDidLoad() {
+//        super.viewDidLoad()
+//        view.backgroundColor = .backgroundColor
+//        
+//        addView()
+//        setLayout()
+//    }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
@@ -99,13 +99,13 @@ final class IntroViewController: UIViewController {
             .disposed(by: disposeBag)
     }
     
-    private func addView() {
+    override func addView() {
         [backgroundView,underText,loginButton,signUpButton,logo].forEach {
             view.addSubview($0)
         }
     }
     
-    private func setLayout() {
+    override func setLayout() {
         backgroundView.snp.makeConstraints {
             $0.centerX.equalToSuperview()
             $0.top.equalTo(view.snp.top).offset((bounds.height) / 3.8)

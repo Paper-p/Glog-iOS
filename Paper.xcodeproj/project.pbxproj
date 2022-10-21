@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		772FF6AE29021C4B0043C187 /* IntroCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772FF6AD29021C4B0043C187 /* IntroCoordinator.swift */; };
+		772FF6B129022A130043C187 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772FF6B029022A130043C187 /* BaseViewController.swift */; };
 		7743A41428BE07260089B473 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7743A41328BE07260089B473 /* AppDelegate.swift */; };
 		7743A41628BE07260089B473 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7743A41528BE07260089B473 /* SceneDelegate.swift */; };
 		7743A41828BE07260089B473 /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7743A41728BE07260089B473 /* IntroViewController.swift */; };
@@ -36,6 +37,7 @@
 
 /* Begin PBXFileReference section */
 		772FF6AD29021C4B0043C187 /* IntroCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroCoordinator.swift; sourceTree = "<group>"; };
+		772FF6B029022A130043C187 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		7743A41028BE07260089B473 /* Paper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Paper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7743A41328BE07260089B473 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7743A41528BE07260089B473 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -75,6 +77,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		772FF6AF29022A040043C187 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				772FF6B029022A130043C187 /* BaseViewController.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
 		7743A40728BE07260089B473 = {
 			isa = PBXGroup;
 			children = (
@@ -216,6 +226,7 @@
 		7756F2EE2902176600F22B4C /* App */ = {
 			isa = PBXGroup;
 			children = (
+				772FF6AF29022A040043C187 /* Base */,
 				7756F2EB2902172900F22B4C /* SignUp */,
 				7756F2DF2901351700F22B4C /* SignIn */,
 				7756F2DE290134F200F22B4C /* Intro */,
@@ -336,6 +347,7 @@
 				772FF6AE29021C4B0043C187 /* IntroCoordinator.swift in Sources */,
 				7743A41428BE07260089B473 /* AppDelegate.swift in Sources */,
 				7756F2E52901358D00F22B4C /* SignInViewModel.swift in Sources */,
+				772FF6B129022A130043C187 /* BaseViewController.swift in Sources */,
 				7756F2D328FFEBB500F22B4C /* Coordinator.swift in Sources */,
 				7756F2F02902178E00F22B4C /* SignUpViewController.swift in Sources */,
 				7743A41628BE07260089B473 /* SceneDelegate.swift in Sources */,
