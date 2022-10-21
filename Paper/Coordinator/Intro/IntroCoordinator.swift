@@ -2,7 +2,7 @@
 //  IntroCoordinator.swift
 //  Paper
 //
-//  Created by 선민재 on 2022/10/20.
+//  Created by 선민재 on 2022/10/21.
 //
 
 import UIKit
@@ -25,13 +25,13 @@ class IntroCoordinator : Coordinator {
         navigationController.setViewControllers([introVC], animated: true)
     }
     func pushSignInVC() {
-//        navigationController.setViewControllers([], animated: true)
         let signInVC = SignInViewController()
         signInVC.coordinator = self
         navigationController.pushViewController(signInVC, animated: true)
-//        navigationController.setViewControllers([signInVC], animated: true)
-//        let test = SignInViewController()
-//        test.modalPresentationStyle = .fullScreen
-//        navigationController.pushViewController(test, animated: true)
+    }
+    func pushSignUpVC() {
+        let signUpVC = SignUpViewController()
+        signUpVC.coordinator = self
+        navigationController.pushViewController(signUpVC, animated: true)
     }
 }

@@ -74,6 +74,12 @@ final class IntroViewController: UIViewController {
         $0.setAttributedTitle(text, for: .normal)
         $0.titleLabel?.font = UIFont(name: "Pretendard-ExtraBold", size: 18)
         $0.setTitleColor(UIColor.black, for: .normal)
+        $0.rx.tap
+            .bind(with: self) { owner, _ in
+                owner.coordinator.pushSignInVC()
+                print(owner.coordinator)
+            }
+            .disposed(by: disposeBag)
     }
     
     lazy var signUpButton = UIButton().then {
@@ -87,7 +93,7 @@ final class IntroViewController: UIViewController {
         $0.layer.cornerRadius = 10
         $0.rx.tap
             .bind(with: self) { owner, _ in
-                owner.coordinator.pushSignInVC()
+                owner.coordinator.pushSignUpVC()
                 print(owner.coordinator)
             }
             .disposed(by: disposeBag)
