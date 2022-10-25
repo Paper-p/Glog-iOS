@@ -12,44 +12,31 @@ import RxSwift
 import RxCocoa
 
 final class IntroViewController: BaseViewController {
-    let coordinator: IntroCoordinator
-    
+    let viewModel: IntroViewModel
+//    let coordinator: IntroCoordinator
     let disposeBag = DisposeBag()
     
-    private let bounds = UIScreen.main.bounds
-    
-    init(coordinator: IntroCoordinator) {
-        self.coordinator = coordinator
-        super.init(nibName: nil, bundle: nil)
-        
-    }
-
-    deinit {
-        print("Intro Deinit")
+    init(viewModel: IntroViewModel) {
+        self.viewModel = viewModel
+        super.init()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-//    override func viewDidLoad() {
-//        super.viewDidLoad()
-//        view.backgroundColor = .backgroundColor
-//        
-//        addView()
-//        setLayout()
-//    }
-    
+    private let bounds = UIScreen.main.bounds
+
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         let gradient = CAGradientLayer()
-        gradient.frame = self.loginButton.bounds
+        gradient.frame = self.signInButton.bounds
         gradient.colors = [UIColor.Gradient1!.cgColor, UIColor.Gradient2!.cgColor]
         gradient.startPoint = CGPoint(x: 0.5, y: 0.0)
         gradient.endPoint = CGPoint(x: 1.0, y: 1.0)
-        loginButton.layer.insertSublayer(gradient, at: 0)
-        loginButton.layer.cornerRadius = 10
-        loginButton.layer.masksToBounds = true
+        signInButton.layer.insertSublayer(gradient, at: 0)
+        signInButton.layer.cornerRadius = 10
+        signInButton.layer.masksToBounds = true
     }
     
     let underText = UILabel().then {
@@ -69,17 +56,11 @@ final class IntroViewController: BaseViewController {
         $0.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.52)
         $0.layer.cornerRadius = 112
     }
-    lazy var loginButton = UIButton().then {
+    lazy var signInButton = UIButton().then {
         let text = NSAttributedString(string: "로그인")
         $0.setAttributedTitle(text, for: .normal)
         $0.titleLabel?.font = UIFont(name: "Pretendard-ExtraBold", size: 18)
         $0.setTitleColor(UIColor.black, for: .normal)
-        $0.rx.tap
-            .bind(with: self) { owner, _ in
-                owner.coordinator.pushSignInVC()
-                print(owner.coordinator)
-            }
-            .disposed(by: disposeBag)
     }
     
     lazy var signUpButton = UIButton().then {
@@ -92,15 +73,13 @@ final class IntroViewController: BaseViewController {
         $0.layer.borderColor = UIColor.Gradient2!.cgColor
         $0.layer.cornerRadius = 10
         $0.rx.tap
-            .bind(with: self) { owner, _ in
-                owner.coordinator.pushSignUpVC()
-                print(owner.coordinator)
+            .bind(){
             }
             .disposed(by: disposeBag)
     }
     
     override func addView() {
-        [backgroundView,underText,loginButton,signUpButton,logo].forEach {
+        [backgroundView,underText,signInButton,signUpButton,logo].forEach {
             view.addSubview($0)
         }
     }
@@ -116,7 +95,7 @@ final class IntroViewController: BaseViewController {
             $0.centerX.equalToSuperview()
             $0.bottom.equalTo(backgroundView.snp.bottom).inset((bounds.height) / 12.78)
         }
-        loginButton.snp.makeConstraints {
+        signInButton.snp.makeConstraints {
             $0.centerX.equalToSuperview()
             $0.top.equalTo(backgroundView.snp.bottom).offset((bounds.height) / 6.02)
             $0.height.equalTo((bounds.height) / 12.78)
@@ -124,7 +103,7 @@ final class IntroViewController: BaseViewController {
         }
         signUpButton.snp.makeConstraints {
             $0.centerX.equalToSuperview()
-            $0.top.equalTo(loginButton.snp.bottom).offset(16)
+            $0.top.equalTo(signInButton.snp.bottom).offset(16)
             $0.height.equalTo((bounds.height) / 12.78)
             $0.width.equalTo((bounds.width) / 1.06)
         }

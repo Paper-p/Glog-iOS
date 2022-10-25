@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SignUpViewController: UIViewController {
+class SignUpViewController: BaseViewController {
     weak var coordinator: IntroCoordinator?
 
     override func viewDidLoad() {

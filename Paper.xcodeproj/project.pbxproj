@@ -23,7 +23,7 @@
 		779AC88C28E8E6EE006C4ACE /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 779AC88B28E8E6EE006C4ACE /* SnapKit */; };
 		779AC88F28E8E6FB006C4ACE /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = 779AC88E28E8E6FB006C4ACE /* Then */; };
 		779AC89228E8E764006C4ACE /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 779AC89128E8E764006C4ACE /* Moya */; };
-		779AC89428E959DD006C4ACE /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 779AC89328E959DC006C4ACE /* LoginViewModel.swift */; };
+		779AC89428E959DD006C4ACE /* IntroViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 779AC89328E959DC006C4ACE /* IntroViewModel.swift */; };
 		779AC8B328E976AE006C4ACE /* Pretendard-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 779AC8B028E96038006C4ACE /* Pretendard-Bold.ttf */; };
 		779AC8B428E976B1006C4ACE /* Pretendard-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 779AC8AC28E96038006C4ACE /* Pretendard-Black.ttf */; };
 		779AC8B528E976B5006C4ACE /* Pretendard-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 779AC8A828E96037006C4ACE /* Pretendard-ExtraBold.ttf */; };
@@ -49,7 +49,7 @@
 		7756F2E12901354500F22B4C /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		7756F2E42901358D00F22B4C /* SignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
 		7756F2EF2902178E00F22B4C /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
-		779AC89328E959DC006C4ACE /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		779AC89328E959DC006C4ACE /* IntroViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroViewModel.swift; sourceTree = "<group>"; };
 		779AC8A828E96037006C4ACE /* Pretendard-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-ExtraBold.ttf"; sourceTree = "<group>"; };
 		779AC8A928E96038006C4ACE /* Pretendard-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Regular.ttf"; sourceTree = "<group>"; };
 		779AC8AA28E96038006C4ACE /* Pretendard-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Thin.ttf"; sourceTree = "<group>"; };
@@ -119,7 +119,7 @@
 		7756F2D028FFCABD00F22B4C /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				779AC89328E959DC006C4ACE /* LoginViewModel.swift */,
+				779AC89328E959DC006C4ACE /* IntroViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -351,7 +351,7 @@
 				7756F2D328FFEBB500F22B4C /* Coordinator.swift in Sources */,
 				7756F2F02902178E00F22B4C /* SignUpViewController.swift in Sources */,
 				7743A41628BE07260089B473 /* SceneDelegate.swift in Sources */,
-				779AC89428E959DD006C4ACE /* LoginViewModel.swift in Sources */,
+				779AC89428E959DD006C4ACE /* IntroViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
