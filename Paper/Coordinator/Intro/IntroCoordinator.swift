@@ -22,17 +22,17 @@ class IntroCoordinator : Coordinator {
     
     func start() {
         let introVM = IntroViewModel(coordinator: self)
-        let introVC = IntroViewController(viewModel: introVM)
+        let introVC = IntroViewController(introVM)
         navigationController.setViewControllers([introVC], animated: true)
     }
     func pushSignInVC() {
         let signInVM = SignInViewModel(coordinator: self)
-        let signInVC = SignInViewController(viewModel: signInVM)
+        let signInVC = SignInViewController(signInVM)
         navigationController.pushViewController(signInVC, animated: true)
     }
     func pushSignUpVC() {
         let signUpVM = SignUpViewModel(coordinator: self)
-        let signUpVC = SignUpViewController(viewModel: signUpVM)
+        let signUpVC = SignUpViewController(signUpVM)
         navigationController.pushViewController(signUpVC, animated: true)
     }
 }

@@ -10,11 +10,6 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-final class SignInViewModel {
-    private let disposeBag = DisposeBag()
-    let coordinator: IntroCoordinator
+final class SignInViewModel:BaseViewModel {
     
-    init(coordinator: IntroCoordinator) {
-        self.coordinator = coordinator
-    }
 }

@@ -9,13 +9,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-final class IntroViewModel {
-    private let disposeBag = DisposeBag()
-    let coordinator: IntroCoordinator
-
-    init(coordinator: IntroCoordinator) {
-        self.coordinator = coordinator
-    }
+final class IntroViewModel:BaseViewModel {
 
     struct Input {
 //        let signInButtonDidTap: Observable<Void>

@@ -11,21 +11,8 @@ import SnapKit
 import RxSwift
 import RxCocoa
 
-final class IntroViewController: BaseViewController {
-    let viewModel: IntroViewModel
-    let disposeBag = DisposeBag()
+final class IntroViewController: BaseViewController<IntroViewModel> {
     
-    init(viewModel: IntroViewModel) {
-        self.viewModel = viewModel
-        super.init(nibName: nil, bundle: nil)
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    private let bounds = UIScreen.main.bounds
-
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         let gradient = CAGradientLayer()
@@ -61,8 +48,8 @@ final class IntroViewController: BaseViewController {
         $0.titleLabel?.font = UIFont(name: "Pretendard-ExtraBold", size: 18)
         $0.setTitleColor(UIColor.black, for: .normal)
         $0.rx.tap
-            .bind(){
-                self.viewModel.pushSignInVC()
+            .bind(with: self) { owner, _ in
+                owner.viewModel.pushSignInVC()
             }
             .disposed(by: disposeBag)
     }
@@ -77,8 +64,8 @@ final class IntroViewController: BaseViewController {
         $0.layer.borderColor = UIColor.Gradient2!.cgColor
         $0.layer.cornerRadius = 10
         $0.rx.tap
-            .bind(){
-                self.viewModel.pushSignUpVC()
+            .bind(with: self) { owner, _ in
+                owner.viewModel.pushSignUpVC()
             }
             .disposed(by: disposeBag)
     }

@@ -9,18 +9,7 @@ import UIKit
 import RxCocoa
 import RxSwift
 
-class SignInViewController: UIViewController {
-    let viewModel: SignInViewModel
-    let disposeBag = DisposeBag()
-    
-    init(viewModel: SignInViewModel) {
-        self.viewModel = viewModel
-        super.init(nibName: nil, bundle: nil)
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
+class SignInViewController: BaseViewController<SignInViewModel> {
     
     override func viewDidLoad() {
         super.viewDidLoad()
