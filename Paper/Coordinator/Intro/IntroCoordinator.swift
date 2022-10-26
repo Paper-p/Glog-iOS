@@ -26,13 +26,13 @@ class IntroCoordinator : Coordinator {
         navigationController.setViewControllers([introVC], animated: true)
     }
     func pushSignInVC() {
-        let signInVC = SignInViewController()
-        signInVC.coordinator = self
+        let signInVM = SignInViewModel(coordinator: self)
+        let signInVC = SignInViewController(viewModel: signInVM)
         navigationController.pushViewController(signInVC, animated: true)
     }
     func pushSignUpVC() {
-        let signUpVC = SignUpViewController()
-        signUpVC.coordinator = self
+        let signUpVM = SignUpViewModel(coordinator: self)
+        let signUpVC = SignUpViewController(viewModel: signUpVM)
         navigationController.pushViewController(signUpVC, animated: true)
     }
 }

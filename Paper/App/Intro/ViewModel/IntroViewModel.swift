@@ -18,25 +18,32 @@ final class IntroViewModel {
     }
 
     struct Input {
-        let signInButtonDidTap: Observable<Void>
-        let signUpButtonDidTap: Observable<Void>
+//        let signInButtonDidTap: Observable<Void>
+//        let signUpButtonDidTap: Observable<Void>
     }
 
     struct Output {
     }
 
-    func transVC(_ input: Input) {
-
-        input.signInButtonDidTap
-            .bind(with: self)  { owner, _ in
-                owner.coordinator.pushSignInVC()
-            }
-            .disposed(by: disposeBag)
-        
-        input.signUpButtonDidTap
-            .bind(with: self)  { owner, _ in
-                owner.coordinator.pushSignUpVC()
-            }
-            .disposed(by: disposeBag)
+//    func transVC(_ input: Input) {
+//
+//        input.signInButtonDidTap
+//            .bind(with: self)  { owner, _ in
+//                owner.coordinator.pushSignInVC()
+//            }
+//            .disposed(by: disposeBag)
+//
+//        input.signUpButtonDidTap
+//            .bind(with: self)  { owner, _ in
+//                owner.coordinator.pushSignUpVC()
+//            }
+//            .disposed(by: disposeBag)
+//    }
+    func pushSignInVC() {
+        coordinator.pushSignInVC()
     }
+    func pushSignUpVC() {
+        coordinator.pushSignUpVC()
+    }
+    
 }

@@ -13,12 +13,11 @@ import RxCocoa
 
 final class IntroViewController: BaseViewController {
     let viewModel: IntroViewModel
-//    let coordinator: IntroCoordinator
     let disposeBag = DisposeBag()
     
     init(viewModel: IntroViewModel) {
         self.viewModel = viewModel
-        super.init()
+        super.init(nibName: nil, bundle: nil)
     }
     
     required init?(coder: NSCoder) {
@@ -61,6 +60,11 @@ final class IntroViewController: BaseViewController {
         $0.setAttributedTitle(text, for: .normal)
         $0.titleLabel?.font = UIFont(name: "Pretendard-ExtraBold", size: 18)
         $0.setTitleColor(UIColor.black, for: .normal)
+        $0.rx.tap
+            .bind(){
+                self.viewModel.pushSignInVC()
+            }
+            .disposed(by: disposeBag)
     }
     
     lazy var signUpButton = UIButton().then {
@@ -74,6 +78,7 @@ final class IntroViewController: BaseViewController {
         $0.layer.cornerRadius = 10
         $0.rx.tap
             .bind(){
+                self.viewModel.pushSignUpVC()
             }
             .disposed(by: disposeBag)
     }
