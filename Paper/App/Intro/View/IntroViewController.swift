@@ -25,6 +25,19 @@ final class IntroViewController: BaseViewController<IntroViewModel> {
         signInButton.layer.masksToBounds = true
     }
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        bindViewModel()
+    }
+    
+    private func bindViewModel() {
+        let input = IntroViewModel.Input(
+            signInButtonTap: signInButton.rx.tap.asObservable(),
+            signUpButtonTap: signUpButton.rx.tap.asObservable()
+        )
+        viewModel.transVC(input: input)
+    }
+    
     let underText = UILabel().then {
         $0.text = "여기서 너의 생각을 \n 남들에게 이야기해봐"
         $0.numberOfLines = 2
@@ -47,11 +60,11 @@ final class IntroViewController: BaseViewController<IntroViewModel> {
         $0.setAttributedTitle(text, for: .normal)
         $0.titleLabel?.font = UIFont(name: "Pretendard-ExtraBold", size: 18)
         $0.setTitleColor(UIColor.black, for: .normal)
-        $0.rx.tap
-            .bind(with: self) { owner, _ in
-                owner.viewModel.pushSignInVC()
-            }
-            .disposed(by: disposeBag)
+//        $0.rx.tap
+//            .bind(with: self) { owner, _ in
+//                owner.viewModel.pushSignInVC()
+//            }
+//            .disposed(by: disposeBag)
     }
     
     lazy var signUpButton = UIButton().then {
@@ -63,11 +76,11 @@ final class IntroViewController: BaseViewController<IntroViewModel> {
         $0.layer.borderWidth = 1
         $0.layer.borderColor = UIColor.Gradient2!.cgColor
         $0.layer.cornerRadius = 10
-        $0.rx.tap
-            .bind(with: self) { owner, _ in
-                owner.viewModel.pushSignUpVC()
-            }
-            .disposed(by: disposeBag)
+//        $0.rx.tap
+//            .bind(with: self) { owner, _ in
+//                owner.viewModel.pushSignUpVC()
+//            }
+//            .disposed(by: disposeBag)
     }
     
     override func addView() {

@@ -12,27 +12,24 @@ import RxCocoa
 final class IntroViewModel:BaseViewModel {
 
     struct Input {
-//        let signInButtonDidTap: Observable<Void>
-//        let signUpButtonDidTap: Observable<Void>
+        let signInButtonTap: Observable<Void>
+        let signUpButtonTap: Observable<Void>
     }
 
     struct Output {
+        
     }
 
-//    func transVC(_ input: Input) {
-//
-//        input.signInButtonDidTap
-//            .bind(with: self)  { owner, _ in
-//                owner.coordinator.pushSignInVC()
-//            }
-//            .disposed(by: disposeBag)
-//
-//        input.signUpButtonDidTap
-//            .bind(with: self)  { owner, _ in
-//                owner.coordinator.pushSignUpVC()
-//            }
-//            .disposed(by: disposeBag)
-//    }
+    func transVC(input: Input) {
+        input.signInButtonTap.subscribe(
+        onNext: pushSignInVC
+        ) .disposed(by: disposeBag)
+        
+        input.signUpButtonTap.subscribe(
+        onNext: pushSignUpVC
+        ) .disposed(by: disposeBag)
+    }
+    
     func pushSignInVC() {
         coordinator.pushSignInVC()
     }
