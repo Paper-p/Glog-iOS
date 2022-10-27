@@ -11,10 +11,12 @@ import RxSwift
 import Then
 import SnapKit
 
-class BaseViewController<T: BaseViewModel>: UIViewController {
+class BaseViewController<T>: UIViewController {
     
     let viewModel: T
     var disposeBag = DisposeBag()
+    let bounds = UIScreen.main.bounds
+
     
     init(_ viewModel: T) {
         self.viewModel = viewModel
@@ -24,9 +26,6 @@ class BaseViewController<T: BaseViewModel>: UIViewController {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-    let bounds = UIScreen.main.bounds
-
     override func viewDidLoad() {
         super.viewDidLoad()
         addView()

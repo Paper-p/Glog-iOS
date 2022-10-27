@@ -9,7 +9,13 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-final class IntroViewModel:BaseViewModel {
+final class IntroViewModel {
+    var coordinator: IntroCoordinator
+    var disposeBag = DisposeBag()
+    
+    init(coordinator: IntroCoordinator){
+        self.coordinator = coordinator
+    }
 
     struct Input {
         let signInButtonTap: Observable<Void>
@@ -30,10 +36,10 @@ final class IntroViewModel:BaseViewModel {
         ) .disposed(by: disposeBag)
     }
     
-    func pushSignInVC() {
+    private func pushSignInVC() {
         coordinator.pushSignInVC()
     }
-    func pushSignUpVC() {
+    private func pushSignUpVC() {
         coordinator.pushSignUpVC()
     }
     

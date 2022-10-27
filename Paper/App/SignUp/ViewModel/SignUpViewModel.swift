@@ -9,6 +9,11 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-final class SignUpViewModel:BaseViewModel {
+final class SignUpViewModel {
+    var coordinator: IntroCoordinator
+    var disposeBag = DisposeBag()
     
+    init(coordinator: IntroCoordinator){
+        self.coordinator = coordinator
+    }
 }
