@@ -9,9 +9,8 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-final class IntroViewModel {
+final class IntroViewModel: BaseViewModel {
     var coordinator: IntroCoordinator
-    var disposeBag = DisposeBag()
     
     init(coordinator: IntroCoordinator){
         self.coordinator = coordinator
