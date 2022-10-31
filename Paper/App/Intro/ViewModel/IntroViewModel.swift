@@ -35,7 +35,7 @@ final class IntroViewModel: BaseViewModel {
     
 }
 extension IntroViewModel: ViewModelType{
-    
+
     struct Input {
         let signInButtonTap: Observable<Void>
         let signUpButtonTap: Observable<Void>

@@ -88,7 +88,6 @@
 			children = (
 				772FF6B029022A130043C187 /* BaseViewController.swift */,
 				77F59A09290A841A0096FA36 /* BaseViewModel.swift */,
-				77F13A86290F6F7900F7354A /* ViewModelProtocol.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -112,6 +111,7 @@
 		7743A41228BE07260089B473 /* Paper */ = {
 			isa = PBXGroup;
 			children = (
+				77F13A88290F9EC600F7354A /* Protocol */,
 				7756F2EE2902176600F22B4C /* App */,
 				7756F2D4290017F600F22B4C /* Coordinator */,
 				779AC8A728E96029006C4ACE /* font */,
@@ -257,6 +257,14 @@
 				779AC8AA28E96038006C4ACE /* Pretendard-Thin.ttf */,
 			);
 			path = font;
+			sourceTree = "<group>";
+		};
+		77F13A88290F9EC600F7354A /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				77F13A86290F6F7900F7354A /* ViewModelProtocol.swift */,
+			);
+			path = Protocol;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
