@@ -16,15 +16,6 @@ final class IntroViewModel: BaseViewModel {
         self.coordinator = coordinator
     }
 
-    struct Input {
-        let signInButtonTap: Observable<Void>
-        let signUpButtonTap: Observable<Void>
-    }
-
-    struct Output {
-        
-    }
-
     func transVC(input: Input) {
         input.signInButtonTap.subscribe(
         onNext: pushSignInVC
@@ -42,4 +33,15 @@ final class IntroViewModel: BaseViewModel {
         coordinator.pushSignUpVC()
     }
     
+}
+extension IntroViewModel: ViewModelType{
+    
+    struct Input {
+        let signInButtonTap: Observable<Void>
+        let signUpButtonTap: Observable<Void>
+    }
+
+    struct Output {
+        
+    }
 }

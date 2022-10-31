@@ -34,6 +34,7 @@
 		779AC8B928E976BF006C4ACE /* Pretendard-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 779AC8A928E96038006C4ACE /* Pretendard-Regular.ttf */; };
 		779AC8BA28E976C2006C4ACE /* Pretendard-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 779AC8AD28E96038006C4ACE /* Pretendard-SemiBold.ttf */; };
 		779AC8BB28E976C4006C4ACE /* Pretendard-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 779AC8AA28E96038006C4ACE /* Pretendard-Thin.ttf */; };
+		77F13A87290F6F7900F7354A /* ViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F13A86290F6F7900F7354A /* ViewModelProtocol.swift */; };
 		77F59A0A290A841A0096FA36 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F59A09290A841A0096FA36 /* BaseViewModel.swift */; };
 /* End PBXBuildFile section */
 
@@ -62,6 +63,7 @@
 		779AC8AE28E96038006C4ACE /* Pretendard-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Medium.ttf"; sourceTree = "<group>"; };
 		779AC8AF28E96038006C4ACE /* Pretendard-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-ExtraLight.ttf"; sourceTree = "<group>"; };
 		779AC8B028E96038006C4ACE /* Pretendard-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Bold.ttf"; sourceTree = "<group>"; };
+		77F13A86290F6F7900F7354A /* ViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelProtocol.swift; sourceTree = "<group>"; };
 		77F59A09290A841A0096FA36 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -86,6 +88,7 @@
 			children = (
 				772FF6B029022A130043C187 /* BaseViewController.swift */,
 				77F59A09290A841A0096FA36 /* BaseViewModel.swift */,
+				77F13A86290F6F7900F7354A /* ViewModelProtocol.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -352,6 +355,7 @@
 				7743A41828BE07260089B473 /* IntroViewController.swift in Sources */,
 				772FF6AE29021C4B0043C187 /* IntroCoordinator.swift in Sources */,
 				7743A41428BE07260089B473 /* AppDelegate.swift in Sources */,
+				77F13A87290F6F7900F7354A /* ViewModelProtocol.swift in Sources */,
 				772FF6B129022A130043C187 /* BaseViewController.swift in Sources */,
 				77F59A0A290A841A0096FA36 /* BaseViewModel.swift in Sources */,
 				7756F2D328FFEBB500F22B4C /* Coordinator.swift in Sources */,
