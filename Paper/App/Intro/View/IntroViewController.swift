@@ -11,31 +11,31 @@ import SnapKit
 import RxSwift
 import RxCocoa
 
-class IntroViewController: UIViewController {
-    weak var coordinator: IntroCoordinator?
-    
-    let disposeBag = DisposeBag()
-    
-    private let bounds = UIScreen.main.bounds
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        view.backgroundColor = .backgroundColor
-        
-        addView()
-        setLayout()
-    }
+final class IntroViewController: BaseViewController<IntroViewModel> {
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         let gradient = CAGradientLayer()
-        gradient.frame = self.loginButton.bounds
+        gradient.frame = self.signInButton.bounds
         gradient.colors = [UIColor.Gradient1!.cgColor, UIColor.Gradient2!.cgColor]
         gradient.startPoint = CGPoint(x: 0.5, y: 0.0)
         gradient.endPoint = CGPoint(x: 1.0, y: 1.0)
-        loginButton.layer.insertSublayer(gradient, at: 0)
-        loginButton.layer.cornerRadius = 10
-        loginButton.layer.masksToBounds = true
+        signInButton.layer.insertSublayer(gradient, at: 0)
+        signInButton.layer.cornerRadius = 10
+        signInButton.layer.masksToBounds = true
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        bindViewModel()
+    }
+    
+    private func bindViewModel() {
+        let input = IntroViewModel.Input(
+            signInButtonTap: signInButton.rx.tap.asObservable(),
+            signUpButtonTap: signUpButton.rx.tap.asObservable()
+        )
+        viewModel.transVC(input: input)
     }
     
     let underText = UILabel().then {
@@ -55,7 +55,7 @@ class IntroViewController: UIViewController {
         $0.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.52)
         $0.layer.cornerRadius = 112
     }
-    lazy var loginButton = UIButton().then {
+    lazy var signInButton = UIButton().then {
         let text = NSAttributedString(string: "로그인")
         $0.setAttributedTitle(text, for: .normal)
         $0.titleLabel?.font = UIFont(name: "Pretendard-ExtraBold", size: 18)
@@ -73,19 +73,13 @@ class IntroViewController: UIViewController {
         $0.layer.cornerRadius = 10
     }
     
-    private func addView() {
-        [backgroundView,underText,loginButton,signUpButton,logo].forEach {
+    override func addView() {
+        [backgroundView,underText,signInButton,signUpButton,logo].forEach {
             view.addSubview($0)
         }
-        signUpButton.rx.tap
-            .bind(with: self) { owner, _ in
-                print("Hello World")
-            }
-            .disposed(by: disposeBag)
     }
     
-    
-    private func setLayout() {
+    override func setLayout() {
         backgroundView.snp.makeConstraints {
             $0.centerX.equalToSuperview()
             $0.top.equalTo(view.snp.top).offset((bounds.height) / 3.8)
@@ -96,7 +90,7 @@ class IntroViewController: UIViewController {
             $0.centerX.equalToSuperview()
             $0.bottom.equalTo(backgroundView.snp.bottom).inset((bounds.height) / 12.78)
         }
-        loginButton.snp.makeConstraints {
+        signInButton.snp.makeConstraints {
             $0.centerX.equalToSuperview()
             $0.top.equalTo(backgroundView.snp.bottom).offset((bounds.height) / 6.02)
             $0.height.equalTo((bounds.height) / 12.78)
@@ -104,7 +98,7 @@ class IntroViewController: UIViewController {
         }
         signUpButton.snp.makeConstraints {
             $0.centerX.equalToSuperview()
-            $0.top.equalTo(loginButton.snp.bottom).offset(16)
+            $0.top.equalTo(signInButton.snp.bottom).offset(16)
             $0.height.equalTo((bounds.height) / 12.78)
             $0.width.equalTo((bounds.width) / 1.06)
         }

@@ -2,24 +2,37 @@
 //  IntroCoordinator.swift
 //  Paper
 //
-//  Created by 선민재 on 2022/10/20.
+//  Created by 선민재 on 2022/10/21.
 //
 
 import UIKit
 
 
 class IntroCoordinator : Coordinator {
-    var childCoordinators: [Coordinator] = []
+    var childCoordinators = [Coordinator]()
+    var navigationController: UINavigationController
+    let window: UIWindow
     
-    var nav: UINavigationController
     
-    init(nav:UINavigationController) {
-        self.nav = nav
+    init(navigationController: UINavigationController, window: UIWindow) {
+        self.navigationController = navigationController
+        self.window = window
+        window.rootViewController = navigationController
     }
     
     func start() {
-        let introVC = IntroViewController()
-        introVC.coordinator = self
-        nav.pushViewController(introVC, animated: true)
+        let introVM = IntroViewModel(coordinator: self)
+        let introVC = IntroViewController(introVM)
+        navigationController.setViewControllers([introVC], animated: true)
+    }
+    func pushSignInVC() {
+        let signInVM = SignInViewModel(coordinator: self)
+        let signInVC = SignInViewController(signInVM)
+        navigationController.pushViewController(signInVC, animated: true)
+    }
+    func pushSignUpVC() {
+        let signUpVM = SignUpViewModel(coordinator: self)
+        let signUpVC = SignUpViewController(signUpVM)
+        navigationController.pushViewController(signUpVC, animated: true)
     }
 }
