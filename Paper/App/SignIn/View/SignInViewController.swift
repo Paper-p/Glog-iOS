@@ -19,6 +19,18 @@ class SignInViewController: BaseViewController<SignInViewModel> {
         self.navigationController?.navigationBar.topItem?.title = "취소"
     }
     
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        let gradient = CAGradientLayer()
+        gradient.frame = self.signInButton.bounds
+        gradient.colors = [UIColor.Gradient1!.cgColor, UIColor.Gradient2!.cgColor]
+        gradient.startPoint = CGPoint(x: 0.5, y: 0.0)
+        gradient.endPoint = CGPoint(x: 1.0, y: 1.0)
+        signInButton.layer.insertSublayer(gradient, at: 0)
+        signInButton.layer.cornerRadius = 10
+        signInButton.layer.masksToBounds = true
+    }
+    
     let signInLogo = UIImageView().then {
         $0.image = UIImage(named: "signInLogo.svg")
     }
@@ -47,8 +59,15 @@ class SignInViewController: BaseViewController<SignInViewModel> {
         $0.layer.cornerRadius = 10
     }
     
+    lazy var signInButton = UIButton().then {
+        let text = NSAttributedString(string: "로그인")
+        $0.setAttributedTitle(text, for: .normal)
+        $0.titleLabel?.font = UIFont(name: "Pretendard-ExtraBold", size: 18)
+        $0.setTitleColor(UIColor.black, for: .normal)
+    }
+    
     override func addView() {
-        [signInLogo,underText, idTextField,pwTextField].forEach {
+        [signInLogo,underText, idTextField,pwTextField, signInButton].forEach {
             view.addSubview($0)
         }
     }
@@ -77,6 +96,13 @@ class SignInViewController: BaseViewController<SignInViewModel> {
             $0.centerX.equalToSuperview()
             $0.height.equalTo((bounds.height) / 16.23)
             $0.trailing.leading.equalToSuperview().inset(12)
+        }
+        
+        signInButton.snp.makeConstraints {
+            $0.top.equalTo(pwTextField.snp.bottom).offset((bounds.height) / 26.375)
+            $0.centerX.equalToSuperview()
+            $0.height.equalTo((bounds.height) / 12.78)
+            $0.width.equalTo((bounds.width) / 1.06)
         }
         
     }

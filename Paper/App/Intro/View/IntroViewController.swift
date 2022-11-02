@@ -50,11 +50,11 @@ final class IntroViewController: BaseViewController<IntroViewModel> {
         $0.image = UIImage(named: "Logo.svg")
     }
     
-    
     let backgroundView = UIView().then {
         $0.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.52)
         $0.layer.cornerRadius = 112
     }
+    
     lazy var signInButton = UIButton().then {
         let text = NSAttributedString(string: "로그인")
         $0.setAttributedTitle(text, for: .normal)
