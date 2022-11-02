@@ -30,6 +30,7 @@ class BaseViewController<T>: UIViewController {
         super.viewDidLoad()
         addView()
         setLayout()
+        view.backgroundColor = .backgroundColor
     }
 
     func addView() {
@@ -39,4 +40,10 @@ class BaseViewController<T>: UIViewController {
     func setLayout() {
         
     }
+}
+
+extension UIColor {
+    class var backgroundColor: UIColor?{return UIColor(named: "backgroundColor")}
+    class var Gradient1: UIColor?{return UIColor(named: "Gradient1")}
+    class var Gradient2: UIColor?{return UIColor(named: "Gradient2")}
 }
