@@ -46,4 +46,17 @@ extension UIColor {
     class var backgroundColor: UIColor?{return UIColor(named: "backgroundColor")}
     class var Gradient1: UIColor?{return UIColor(named: "Gradient1")}
     class var Gradient2: UIColor?{return UIColor(named: "Gradient2")}
+    class var textField: UIColor?{return UIColor(named: "textField")}
+}
+
+extension UITextField {
+    func addLeftImage(_ image: UIImage, x: Float) {
+        let iconView = UIImageView(frame:CGRect(x: CGFloat(x), y: 5, width: image.size.width, height: image.size.height))
+       iconView.image = image
+       let iconContainerView: UIView = UIView(frame:CGRect(x: 0, y: 0, width: 38, height: 30))
+       iconContainerView.addSubview(iconView)
+       leftView = iconContainerView
+       leftViewMode = .always
+    }
+
 }
