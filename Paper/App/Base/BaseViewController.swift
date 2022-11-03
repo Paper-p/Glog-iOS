@@ -60,3 +60,16 @@ extension UITextField {
     }
 
 }
+
+extension UIViewController {
+    func addGradient(_ button: UIButton) {
+        let gradient = CAGradientLayer()
+        gradient.frame = button.bounds
+        gradient.colors = [UIColor.Gradient1!.cgColor, UIColor.Gradient2!.cgColor]
+        gradient.startPoint = CGPoint(x: 0.5, y: 0.0)
+        gradient.endPoint = CGPoint(x: 1.0, y: 1.0)
+        button.layer.insertSublayer(gradient, at: 0)
+        button.layer.cornerRadius = 10
+        button.layer.masksToBounds = true
+    }
+}

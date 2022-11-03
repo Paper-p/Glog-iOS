@@ -15,19 +15,15 @@ final class IntroViewController: BaseViewController<IntroViewModel> {
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        let gradient = CAGradientLayer()
-        gradient.frame = self.signInButton.bounds
-        gradient.colors = [UIColor.Gradient1!.cgColor, UIColor.Gradient2!.cgColor]
-        gradient.startPoint = CGPoint(x: 0.5, y: 0.0)
-        gradient.endPoint = CGPoint(x: 1.0, y: 1.0)
-        signInButton.layer.insertSublayer(gradient, at: 0)
-        signInButton.layer.cornerRadius = 10
-        signInButton.layer.masksToBounds = true
+        addGradient(signInButton)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         bindViewModel()
+        let backBarButtonItem = UIBarButtonItem(title: "취소", style: .plain, target: self, action: nil)
+        backBarButtonItem.tintColor = .white
+        self.navigationItem.backBarButtonItem = backBarButtonItem
     }
     
     private func bindViewModel() {
@@ -93,14 +89,14 @@ final class IntroViewController: BaseViewController<IntroViewModel> {
         signInButton.snp.makeConstraints {
             $0.centerX.equalToSuperview()
             $0.top.equalTo(backgroundView.snp.bottom).offset((bounds.height) / 6.02)
-            $0.height.equalTo((bounds.height) / 12.78)
-            $0.width.equalTo((bounds.width) / 1.06)
+            $0.height.equalTo(60)
+            $0.leading.trailing.equalToSuperview().inset(12)
         }
         signUpButton.snp.makeConstraints {
             $0.centerX.equalToSuperview()
             $0.top.equalTo(signInButton.snp.bottom).offset(16)
-            $0.height.equalTo((bounds.height) / 12.78)
-            $0.width.equalTo((bounds.width) / 1.06)
+            $0.height.equalTo(60)
+            $0.leading.trailing.equalToSuperview().inset(12)
         }
         logo.snp.makeConstraints {
             $0.centerX.equalToSuperview()
