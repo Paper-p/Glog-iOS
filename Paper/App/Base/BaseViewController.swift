@@ -43,10 +43,10 @@ class BaseViewController<T>: UIViewController {
 }
 
 extension UIColor {
-    class var backgroundColor: UIColor?{return UIColor(named: "backgroundColor")}
-    class var Gradient1: UIColor?{return UIColor(named: "Gradient1")}
-    class var Gradient2: UIColor?{return UIColor(named: "Gradient2")}
-    class var textField: UIColor?{return UIColor(named: "textField")}
+    static var backgroundColor = UIColor(named: "backgroundColor")
+    static var Gradient1 = UIColor(named: "Gradient1")
+    static var Gradient2 = UIColor(named: "Gradient2")
+    static var textField = UIColor(named: "textField")
 }
 
 extension UITextField {

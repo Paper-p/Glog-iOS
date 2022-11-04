@@ -13,10 +13,6 @@ import Then
 
 class SignInViewController: BaseViewController<SignInViewModel> {
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-    
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         addGradient(signInButton)
