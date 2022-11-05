@@ -33,7 +33,7 @@ class SignInViewController: BaseViewController<SignInViewModel> {
         $0.attributedPlaceholder = NSAttributedString(string: "아이디를 입력해주세요.", attributes: [NSAttributedString.Key.foregroundColor : UIColor(red: 1, green: 1, blue: 1, alpha: 0.48)])
         $0.textColor = UIColor(red: 1.00, green: 1.00, blue: 1.00, alpha: 0.48)
         $0.font = UIFont(name: "Pretendard-Medium", size: 16)
-        $0.addLeftImage(UIImage(named: "idIcon.svg")!,x: 13)
+        $0.addLeftImage(UIImage(systemName: "person.fill")!, x: 13, y:7)
         $0.layer.cornerRadius = 10
     }
     
@@ -42,7 +42,7 @@ class SignInViewController: BaseViewController<SignInViewModel> {
         $0.attributedPlaceholder = NSAttributedString(string: "비밀번호를 입력해주세요", attributes: [NSAttributedString.Key.foregroundColor : UIColor(red: 1, green: 1, blue: 1, alpha: 0.48)])
         $0.textColor = UIColor(red: 1.00, green: 1.00, blue: 1.00, alpha: 0.48)
         $0.font = UIFont(name: "Pretendard-Medium", size: 16)
-        $0.addLeftImage(UIImage(named: "pwIcon.svg")!, x: 17)
+        $0.addLeftImage(UIImage(systemName: "lock.fill")!, x: 13, y: 6)
         $0.layer.cornerRadius = 10
     }
     
