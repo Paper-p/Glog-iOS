@@ -40,6 +40,10 @@
 		77F072392918F22F007FE1DD /* PageUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F072382918F22F007FE1DD /* PageUI.swift */; };
 		77F0723D2918F67C007FE1DD /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 77F0723C2918F67C007FE1DD /* Lottie */; };
 		77F0723F29191EC0007FE1DD /* SignUpEmoji.json in Resources */ = {isa = PBXBuildFile; fileRef = 77F0723E29191EC0007FE1DD /* SignUpEmoji.json */; };
+		77F0724429192537007FE1DD /* SignUpPWViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0724329192537007FE1DD /* SignUpPWViewController.swift */; };
+		77F0724629192547007FE1DD /* SignUpPWViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0724529192547007FE1DD /* SignUpPWViewModel.swift */; };
+		77F0724E291925EC007FE1DD /* SignUpNicknameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0724D291925EC007FE1DD /* SignUpNicknameViewController.swift */; };
+		77F07250291925F9007FE1DD /* SignUpNicknameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0724F291925F9007FE1DD /* SignUpNicknameViewModel.swift */; };
 		77F13A87290F6F7900F7354A /* ViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F13A86290F6F7900F7354A /* ViewModelProtocol.swift */; };
 		77F59A0A290A841A0096FA36 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F59A09290A841A0096FA36 /* BaseViewModel.swift */; };
 /* End PBXBuildFile section */
@@ -74,6 +78,10 @@
 		77F072362918F1CD007FE1DD /* GlogColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlogColor.swift; sourceTree = "<group>"; };
 		77F072382918F22F007FE1DD /* PageUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageUI.swift; sourceTree = "<group>"; };
 		77F0723E29191EC0007FE1DD /* SignUpEmoji.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = SignUpEmoji.json; sourceTree = "<group>"; };
+		77F0724329192537007FE1DD /* SignUpPWViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpPWViewController.swift; sourceTree = "<group>"; };
+		77F0724529192547007FE1DD /* SignUpPWViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpPWViewModel.swift; sourceTree = "<group>"; };
+		77F0724D291925EC007FE1DD /* SignUpNicknameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpNicknameViewController.swift; sourceTree = "<group>"; };
+		77F0724F291925F9007FE1DD /* SignUpNicknameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpNicknameViewModel.swift; sourceTree = "<group>"; };
 		77F13A86290F6F7900F7354A /* ViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelProtocol.swift; sourceTree = "<group>"; };
 		77F59A09290A841A0096FA36 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -243,8 +251,9 @@
 		7756F2EB2902172900F22B4C /* SignUp */ = {
 			isa = PBXGroup;
 			children = (
-				7756F2ED2902175900F22B4C /* ViewModel */,
-				7756F2EC2902175100F22B4C /* View */,
+				77F0724229192514007FE1DD /* Nickname */,
+				77F072412919250E007FE1DD /* Pw */,
+				77F07240291924F6007FE1DD /* Id */,
 			);
 			path = SignUp;
 			sourceTree = "<group>";
@@ -290,6 +299,66 @@
 				779AC8AA28E96038006C4ACE /* Pretendard-Thin.ttf */,
 			);
 			path = font;
+			sourceTree = "<group>";
+		};
+		77F07240291924F6007FE1DD /* Id */ = {
+			isa = PBXGroup;
+			children = (
+				7756F2ED2902175900F22B4C /* ViewModel */,
+				7756F2EC2902175100F22B4C /* View */,
+			);
+			path = Id;
+			sourceTree = "<group>";
+		};
+		77F072412919250E007FE1DD /* Pw */ = {
+			isa = PBXGroup;
+			children = (
+				77F0724829192555007FE1DD /* ViewModel */,
+				77F072472919254B007FE1DD /* View */,
+			);
+			path = Pw;
+			sourceTree = "<group>";
+		};
+		77F0724229192514007FE1DD /* Nickname */ = {
+			isa = PBXGroup;
+			children = (
+				77F0724A291925B9007FE1DD /* ViewModel */,
+				77F07249291925B2007FE1DD /* View */,
+			);
+			path = Nickname;
+			sourceTree = "<group>";
+		};
+		77F072472919254B007FE1DD /* View */ = {
+			isa = PBXGroup;
+			children = (
+				77F0724329192537007FE1DD /* SignUpPWViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		77F0724829192555007FE1DD /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				77F0724529192547007FE1DD /* SignUpPWViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		77F07249291925B2007FE1DD /* View */ = {
+			isa = PBXGroup;
+			children = (
+				77F0724D291925EC007FE1DD /* SignUpNicknameViewController.swift */,
+			);
+			name = View;
+			path = "퍋ㅈ";
+			sourceTree = "<group>";
+		};
+		77F0724A291925B9007FE1DD /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				77F0724F291925F9007FE1DD /* SignUpNicknameViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		77F13A88290F9EC600F7354A /* Protocol */ = {
@@ -399,10 +468,13 @@
 				7726D1682918C4C800EFC325 /* UINavigation.swift in Sources */,
 				77F072372918F1CD007FE1DD /* GlogColor.swift in Sources */,
 				7743A41828BE07260089B473 /* IntroViewController.swift in Sources */,
+				77F0724E291925EC007FE1DD /* SignUpNicknameViewController.swift in Sources */,
 				77F072392918F22F007FE1DD /* PageUI.swift in Sources */,
+				77F0724429192537007FE1DD /* SignUpPWViewController.swift in Sources */,
 				772FF6AE29021C4B0043C187 /* IntroCoordinator.swift in Sources */,
 				7743A41428BE07260089B473 /* AppDelegate.swift in Sources */,
 				77F13A87290F6F7900F7354A /* ViewModelProtocol.swift in Sources */,
+				77F0724629192547007FE1DD /* SignUpPWViewModel.swift in Sources */,
 				772FF6B129022A130043C187 /* BaseViewController.swift in Sources */,
 				77F59A0A290A841A0096FA36 /* BaseViewModel.swift in Sources */,
 				7756F2D328FFEBB500F22B4C /* Coordinator.swift in Sources */,
@@ -411,6 +483,7 @@
 				7743A41628BE07260089B473 /* SceneDelegate.swift in Sources */,
 				772FF6B52908038B0043C187 /* SignInViewModel.swift in Sources */,
 				772FF6B3290803760043C187 /* SignUpViewModel.swift in Sources */,
+				77F07250291925F9007FE1DD /* SignUpNicknameViewModel.swift in Sources */,
 				779AC89428E959DD006C4ACE /* IntroViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
