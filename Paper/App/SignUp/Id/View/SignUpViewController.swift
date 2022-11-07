@@ -45,14 +45,20 @@ class SignUpViewController: BaseViewController<SignUpViewModel> {
     }
     
     override func addView() {
-        [idTextField,nextButton,signUpEmoji].forEach {
+        [signUpEmoji,idTextField,nextButton].forEach {
             view.addSubview($0)
         }
     }
     
     override func setLayout() {
+        signUpEmoji.snp.makeConstraints {
+            $0.top.equalTo(view.snp.top).offset((bounds.height) / 4.99)
+            $0.centerX.equalToSuperview()
+            $0.height.equalTo(134)
+            $0.width.equalTo(134)
+        }
         idTextField.snp.makeConstraints {
-            $0.top.equalTo(view.snp.top).offset((bounds.height) / 2.411)
+            $0.top.equalTo(signUpEmoji.snp.bottom).offset(47)
             $0.centerX.equalToSuperview()
             $0.height.equalTo((bounds.height) / 16.23)
             $0.trailing.leading.equalToSuperview().inset(12)
@@ -62,12 +68,6 @@ class SignUpViewController: BaseViewController<SignUpViewModel> {
             $0.centerX.equalToSuperview()
             $0.height.equalTo(60)
             $0.leading.trailing.equalToSuperview().inset(12)
-        }
-        signUpEmoji.snp.makeConstraints {
-            $0.top.equalTo(view.snp.top).offset((bounds.height) / 4.99)
-            $0.centerX.equalToSuperview()
-            $0.height.equalTo(134)
-            $0.width.equalTo(134)
         }
     }
     
