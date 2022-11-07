@@ -15,19 +15,13 @@ final class IntroViewController: BaseViewController<IntroViewModel> {
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        let gradient = CAGradientLayer()
-        gradient.frame = self.signInButton.bounds
-        gradient.colors = [UIColor.Gradient1!.cgColor, UIColor.Gradient2!.cgColor]
-        gradient.startPoint = CGPoint(x: 0.5, y: 0.0)
-        gradient.endPoint = CGPoint(x: 1.0, y: 1.0)
-        signInButton.layer.insertSublayer(gradient, at: 0)
-        signInButton.layer.cornerRadius = 10
-        signInButton.layer.masksToBounds = true
+        signInButton.glogGradient()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         bindViewModel()
+        self.navigationItem.backButton(title: "취소")
     }
     
     private func bindViewModel() {
@@ -50,11 +44,11 @@ final class IntroViewController: BaseViewController<IntroViewModel> {
         $0.image = UIImage(named: "Logo.svg")
     }
     
-    
     let backgroundView = UIView().then {
         $0.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.52)
         $0.layer.cornerRadius = 112
     }
+    
     lazy var signInButton = UIButton().then {
         let text = NSAttributedString(string: "로그인")
         $0.setAttributedTitle(text, for: .normal)
@@ -93,14 +87,14 @@ final class IntroViewController: BaseViewController<IntroViewModel> {
         signInButton.snp.makeConstraints {
             $0.centerX.equalToSuperview()
             $0.top.equalTo(backgroundView.snp.bottom).offset((bounds.height) / 6.02)
-            $0.height.equalTo((bounds.height) / 12.78)
-            $0.width.equalTo((bounds.width) / 1.06)
+            $0.height.equalTo(60)
+            $0.leading.trailing.equalToSuperview().inset(12)
         }
         signUpButton.snp.makeConstraints {
             $0.centerX.equalToSuperview()
             $0.top.equalTo(signInButton.snp.bottom).offset(16)
-            $0.height.equalTo((bounds.height) / 12.78)
-            $0.width.equalTo((bounds.width) / 1.06)
+            $0.height.equalTo(60)
+            $0.leading.trailing.equalToSuperview().inset(12)
         }
         logo.snp.makeConstraints {
             $0.centerX.equalToSuperview()
@@ -108,10 +102,4 @@ final class IntroViewController: BaseViewController<IntroViewModel> {
         }
     }
     
-}
-
-extension UIColor {
-    class var backgroundColor: UIColor?{return UIColor(named: "backgroundColor")}
-    class var Gradient1: UIColor?{return UIColor(named: "Gradient1")}
-    class var Gradient2: UIColor?{return UIColor(named: "Gradient2")}
 }
