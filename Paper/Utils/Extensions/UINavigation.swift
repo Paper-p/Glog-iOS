@@ -13,4 +13,8 @@ extension UINavigationItem {
         backBarButtonItem.tintColor = UIColor.white
         self.backBarButtonItem = backBarButtonItem
     }
+    func logoImage() {
+        let logo = UIImage(named: "navLogo.svg")
+        self.titleView = UIImageView(image: logo)
+    }
 }
