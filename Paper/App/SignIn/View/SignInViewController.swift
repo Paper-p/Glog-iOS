@@ -15,7 +15,7 @@ class SignInViewController: BaseViewController<SignInViewModel> {
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        addGradient(signInButton)
+        signInButton.glogGradient()
     }
     
     let signInLogo = UIImageView().then {

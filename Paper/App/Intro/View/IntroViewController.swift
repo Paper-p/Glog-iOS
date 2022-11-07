@@ -15,7 +15,7 @@ final class IntroViewController: BaseViewController<IntroViewModel> {
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        addGradient(signInButton)
+        signInButton.glogGradient()
     }
     
     override func viewDidLoad() {

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7726D1662918C28200EFC325 /* UIView+glogGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7726D1652918C28200EFC325 /* UIView+glogGradient.swift */; };
 		772FF6AE29021C4B0043C187 /* IntroCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772FF6AD29021C4B0043C187 /* IntroCoordinator.swift */; };
 		772FF6B129022A130043C187 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772FF6B029022A130043C187 /* BaseViewController.swift */; };
 		772FF6B3290803760043C187 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772FF6B2290803760043C187 /* SignUpViewModel.swift */; };
@@ -39,6 +40,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7726D1652918C28200EFC325 /* UIView+glogGradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+glogGradient.swift"; sourceTree = "<group>"; };
 		772FF6AD29021C4B0043C187 /* IntroCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroCoordinator.swift; sourceTree = "<group>"; };
 		772FF6B029022A130043C187 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		772FF6B2290803760043C187 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
@@ -83,6 +85,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7726D1632918C27000EFC325 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				7726D1642918C27400EFC325 /* Extensions */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		7726D1642918C27400EFC325 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				7726D1652918C28200EFC325 /* UIView+glogGradient.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		772FF6AF29022A040043C187 /* Base */ = {
 			isa = PBXGroup;
 			children = (
@@ -111,6 +129,7 @@
 		7743A41228BE07260089B473 /* Paper */ = {
 			isa = PBXGroup;
 			children = (
+				7726D1632918C27000EFC325 /* Utils */,
 				77F13A88290F9EC600F7354A /* Protocol */,
 				7756F2EE2902176600F22B4C /* App */,
 				7756F2D4290017F600F22B4C /* Coordinator */,
@@ -368,6 +387,7 @@
 				77F59A0A290A841A0096FA36 /* BaseViewModel.swift in Sources */,
 				7756F2D328FFEBB500F22B4C /* Coordinator.swift in Sources */,
 				7756F2F02902178E00F22B4C /* SignUpViewController.swift in Sources */,
+				7726D1662918C28200EFC325 /* UIView+glogGradient.swift in Sources */,
 				7743A41628BE07260089B473 /* SceneDelegate.swift in Sources */,
 				772FF6B52908038B0043C187 /* SignInViewModel.swift in Sources */,
 				772FF6B3290803760043C187 /* SignUpViewModel.swift in Sources */,
