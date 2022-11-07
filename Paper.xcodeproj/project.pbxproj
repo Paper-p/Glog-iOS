@@ -36,6 +36,8 @@
 		779AC8B928E976BF006C4ACE /* Pretendard-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 779AC8A928E96038006C4ACE /* Pretendard-Regular.ttf */; };
 		779AC8BA28E976C2006C4ACE /* Pretendard-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 779AC8AD28E96038006C4ACE /* Pretendard-SemiBold.ttf */; };
 		779AC8BB28E976C4006C4ACE /* Pretendard-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 779AC8AA28E96038006C4ACE /* Pretendard-Thin.ttf */; };
+		77F072372918F1CD007FE1DD /* GlogColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F072362918F1CD007FE1DD /* GlogColor.swift */; };
+		77F072392918F22F007FE1DD /* PageUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F072382918F22F007FE1DD /* PageUI.swift */; };
 		77F13A87290F6F7900F7354A /* ViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F13A86290F6F7900F7354A /* ViewModelProtocol.swift */; };
 		77F59A0A290A841A0096FA36 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F59A09290A841A0096FA36 /* BaseViewModel.swift */; };
 /* End PBXBuildFile section */
@@ -67,6 +69,8 @@
 		779AC8AE28E96038006C4ACE /* Pretendard-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Medium.ttf"; sourceTree = "<group>"; };
 		779AC8AF28E96038006C4ACE /* Pretendard-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-ExtraLight.ttf"; sourceTree = "<group>"; };
 		779AC8B028E96038006C4ACE /* Pretendard-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Bold.ttf"; sourceTree = "<group>"; };
+		77F072362918F1CD007FE1DD /* GlogColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlogColor.swift; sourceTree = "<group>"; };
+		77F072382918F22F007FE1DD /* PageUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageUI.swift; sourceTree = "<group>"; };
 		77F13A86290F6F7900F7354A /* ViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelProtocol.swift; sourceTree = "<group>"; };
 		77F59A09290A841A0096FA36 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -100,6 +104,8 @@
 			children = (
 				7726D1652918C28200EFC325 /* UIView+glogGradient.swift */,
 				7726D1672918C4C800EFC325 /* UINavigation.swift */,
+				77F072362918F1CD007FE1DD /* GlogColor.swift */,
+				77F072382918F22F007FE1DD /* PageUI.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -383,7 +389,9 @@
 			files = (
 				7756F2E22901354500F22B4C /* SignInViewController.swift in Sources */,
 				7726D1682918C4C800EFC325 /* UINavigation.swift in Sources */,
+				77F072372918F1CD007FE1DD /* GlogColor.swift in Sources */,
 				7743A41828BE07260089B473 /* IntroViewController.swift in Sources */,
+				77F072392918F22F007FE1DD /* PageUI.swift in Sources */,
 				772FF6AE29021C4B0043C187 /* IntroCoordinator.swift in Sources */,
 				7743A41428BE07260089B473 /* AppDelegate.swift in Sources */,
 				77F13A87290F6F7900F7354A /* ViewModelProtocol.swift in Sources */,
