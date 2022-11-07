@@ -38,6 +38,8 @@
 		779AC8BB28E976C4006C4ACE /* Pretendard-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 779AC8AA28E96038006C4ACE /* Pretendard-Thin.ttf */; };
 		77F072372918F1CD007FE1DD /* GlogColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F072362918F1CD007FE1DD /* GlogColor.swift */; };
 		77F072392918F22F007FE1DD /* PageUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F072382918F22F007FE1DD /* PageUI.swift */; };
+		77F0723D2918F67C007FE1DD /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 77F0723C2918F67C007FE1DD /* Lottie */; };
+		77F0723F29191EC0007FE1DD /* SignUpEmoji.json in Resources */ = {isa = PBXBuildFile; fileRef = 77F0723E29191EC0007FE1DD /* SignUpEmoji.json */; };
 		77F13A87290F6F7900F7354A /* ViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F13A86290F6F7900F7354A /* ViewModelProtocol.swift */; };
 		77F59A0A290A841A0096FA36 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F59A09290A841A0096FA36 /* BaseViewModel.swift */; };
 /* End PBXBuildFile section */
@@ -71,6 +73,7 @@
 		779AC8B028E96038006C4ACE /* Pretendard-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Bold.ttf"; sourceTree = "<group>"; };
 		77F072362918F1CD007FE1DD /* GlogColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlogColor.swift; sourceTree = "<group>"; };
 		77F072382918F22F007FE1DD /* PageUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageUI.swift; sourceTree = "<group>"; };
+		77F0723E29191EC0007FE1DD /* SignUpEmoji.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = SignUpEmoji.json; sourceTree = "<group>"; };
 		77F13A86290F6F7900F7354A /* ViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelProtocol.swift; sourceTree = "<group>"; };
 		77F59A09290A841A0096FA36 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -85,6 +88,7 @@
 				7756F2DD2900E88B00F22B4C /* RxSwift in Frameworks */,
 				7756F2DB2900E88B00F22B4C /* RxCocoa in Frameworks */,
 				779AC89228E8E764006C4ACE /* Moya in Frameworks */,
+				77F0723D2918F67C007FE1DD /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,6 +142,7 @@
 		7743A41228BE07260089B473 /* Paper */ = {
 			isa = PBXGroup;
 			children = (
+				77F0723E29191EC0007FE1DD /* SignUpEmoji.json */,
 				7726D1632918C27000EFC325 /* Utils */,
 				77F13A88290F9EC600F7354A /* Protocol */,
 				7756F2EE2902176600F22B4C /* App */,
@@ -317,6 +322,7 @@
 				779AC89128E8E764006C4ACE /* Moya */,
 				7756F2DA2900E88B00F22B4C /* RxCocoa */,
 				7756F2DC2900E88B00F22B4C /* RxSwift */,
+				77F0723C2918F67C007FE1DD /* Lottie */,
 			);
 			productName = Paper;
 			productReference = 7743A41028BE07260089B473 /* Paper.app */;
@@ -351,6 +357,7 @@
 				779AC88D28E8E6FB006C4ACE /* XCRemoteSwiftPackageReference "Then" */,
 				779AC89028E8E764006C4ACE /* XCRemoteSwiftPackageReference "Moya" */,
 				7756F2D92900E88B00F22B4C /* XCRemoteSwiftPackageReference "RxSwift" */,
+				77F0723B2918F67C007FE1DD /* XCRemoteSwiftPackageReference "lottie-ios" */,
 			);
 			productRefGroup = 7743A41128BE07260089B473 /* Products */;
 			projectDirPath = "";
@@ -372,6 +379,7 @@
 				779AC8B328E976AE006C4ACE /* Pretendard-Bold.ttf in Resources */,
 				779AC8B528E976B5006C4ACE /* Pretendard-ExtraBold.ttf in Resources */,
 				779AC8B628E976B8006C4ACE /* Pretendard-ExtraLight.ttf in Resources */,
+				77F0723F29191EC0007FE1DD /* SignUpEmoji.json in Resources */,
 				779AC8B928E976BF006C4ACE /* Pretendard-Regular.ttf in Resources */,
 				7743A41D28BE07280089B473 /* Assets.xcassets in Resources */,
 				779AC8BB28E976C4006C4ACE /* Pretendard-Thin.ttf in Resources */,
@@ -643,6 +651,14 @@
 				kind = branch;
 			};
 		};
+		77F0723B2918F67C007FE1DD /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -670,6 +686,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 779AC89028E8E764006C4ACE /* XCRemoteSwiftPackageReference "Moya" */;
 			productName = Moya;
+		};
+		77F0723C2918F67C007FE1DD /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 77F0723B2918F67C007FE1DD /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

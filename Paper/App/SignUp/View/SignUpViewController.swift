@@ -10,6 +10,7 @@ import RxSwift
 import RxCocoa
 import SnapKit
 import Then
+import Lottie
 
 class SignUpViewController: BaseViewController<SignUpViewModel> {
     
@@ -31,6 +32,11 @@ class SignUpViewController: BaseViewController<SignUpViewModel> {
         $0.layer.cornerRadius = 10
     }
     
+    let signUpEmoji = LottieAnimationView(name: "SignUpEmoji").then {
+        $0.loopMode = .loop
+        $0.play()
+    }
+    
     lazy var nextButton = UIButton().then {
         let text = NSAttributedString(string: "다음")
         $0.setAttributedTitle(text, for: .normal)
@@ -39,7 +45,7 @@ class SignUpViewController: BaseViewController<SignUpViewModel> {
     }
     
     override func addView() {
-        [idTextField,nextButton].forEach {
+        [idTextField,nextButton,signUpEmoji].forEach {
             view.addSubview($0)
         }
     }
@@ -56,6 +62,12 @@ class SignUpViewController: BaseViewController<SignUpViewModel> {
             $0.centerX.equalToSuperview()
             $0.height.equalTo(60)
             $0.leading.trailing.equalToSuperview().inset(12)
+        }
+        signUpEmoji.snp.makeConstraints {
+            $0.top.equalTo(view.snp.top).offset((bounds.height) / 4.99)
+            $0.centerX.equalToSuperview()
+            $0.height.equalTo(134)
+            $0.width.equalTo(134)
         }
     }
     
