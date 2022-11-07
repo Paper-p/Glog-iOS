@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		7726D1662918C28200EFC325 /* UIView+glogGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7726D1652918C28200EFC325 /* UIView+glogGradient.swift */; };
+		7726D1682918C4C800EFC325 /* UINavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7726D1672918C4C800EFC325 /* UINavigation.swift */; };
 		772FF6AE29021C4B0043C187 /* IntroCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772FF6AD29021C4B0043C187 /* IntroCoordinator.swift */; };
 		772FF6B129022A130043C187 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772FF6B029022A130043C187 /* BaseViewController.swift */; };
 		772FF6B3290803760043C187 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772FF6B2290803760043C187 /* SignUpViewModel.swift */; };
@@ -41,6 +42,7 @@
 
 /* Begin PBXFileReference section */
 		7726D1652918C28200EFC325 /* UIView+glogGradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+glogGradient.swift"; sourceTree = "<group>"; };
+		7726D1672918C4C800EFC325 /* UINavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigation.swift; sourceTree = "<group>"; };
 		772FF6AD29021C4B0043C187 /* IntroCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroCoordinator.swift; sourceTree = "<group>"; };
 		772FF6B029022A130043C187 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		772FF6B2290803760043C187 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
@@ -97,6 +99,7 @@
 			isa = PBXGroup;
 			children = (
 				7726D1652918C28200EFC325 /* UIView+glogGradient.swift */,
+				7726D1672918C4C800EFC325 /* UINavigation.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -379,6 +382,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7756F2E22901354500F22B4C /* SignInViewController.swift in Sources */,
+				7726D1682918C4C800EFC325 /* UINavigation.swift in Sources */,
 				7743A41828BE07260089B473 /* IntroViewController.swift in Sources */,
 				772FF6AE29021C4B0043C187 /* IntroCoordinator.swift in Sources */,
 				7743A41428BE07260089B473 /* AppDelegate.swift in Sources */,

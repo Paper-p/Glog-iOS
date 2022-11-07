@@ -21,9 +21,7 @@ final class IntroViewController: BaseViewController<IntroViewModel> {
     override func viewDidLoad() {
         super.viewDidLoad()
         bindViewModel()
-        let backBarButtonItem = UIBarButtonItem(title: "취소", style: .plain, target: self, action: nil)
-        backBarButtonItem.tintColor = .white
-        self.navigationItem.backBarButtonItem = backBarButtonItem
+        self.navigationItem.backButton(title: "취소")
     }
     
     private func bindViewModel() {
