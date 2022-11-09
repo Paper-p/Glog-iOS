@@ -30,6 +30,7 @@ class SignUpPWViewController: BaseViewController<SignUpPWViewModel> {
         $0.font = UIFont(name: "Pretendard-Medium", size: 16)
         $0.addLeftImage(UIImage(systemName: "lock.fill")!, x: 13, y:6)
         $0.layer.cornerRadius = 10
+        $0.isSecureTextEntry = true
     }
     
     lazy var checkPWTextField = UITextField().then {
@@ -39,11 +40,18 @@ class SignUpPWViewController: BaseViewController<SignUpPWViewModel> {
         $0.font = UIFont(name: "Pretendard-Medium", size: 16)
         $0.addLeftImage(UIImage(systemName: "lock.fill")!, x: 13, y:6)
         $0.layer.cornerRadius = 10
+        $0.isSecureTextEntry = true
     }
     
     let signUpEmoji = LottieAnimationView(name: "SignUpEmoji").then {
         $0.loopMode = .loop
         $0.play()
+    }
+    
+    let extext = UILabel().then {
+        $0.text = "비밀번호는 8자리 이상 및 기호를 포함해주세요."
+        $0.font = UIFont(name: "Pretendard-Regular", size: 14)
+        $0.textColor = UIColor(red: 234/255, green: 234/255, blue: 234/255, alpha: 1.0)
     }
     
     lazy var nextButton = UIButton().then {
@@ -54,7 +62,7 @@ class SignUpPWViewController: BaseViewController<SignUpPWViewModel> {
     }
     
     override func addView() {
-        [signUpEmoji,pwTextField,checkPWTextField,nextButton].forEach {
+        [signUpEmoji,pwTextField,checkPWTextField,nextButton,extext].forEach {
             view.addSubview($0)
         }
     }
@@ -83,6 +91,10 @@ class SignUpPWViewController: BaseViewController<SignUpPWViewModel> {
             $0.centerX.equalToSuperview()
             $0.height.equalTo(60)
             $0.leading.trailing.equalToSuperview().inset(12)
+        }
+        extext.snp.makeConstraints {
+            $0.top.equalTo(nextButton.snp.bottom).offset(20)
+            $0.centerX.equalToSuperview()
         }
     }
     
