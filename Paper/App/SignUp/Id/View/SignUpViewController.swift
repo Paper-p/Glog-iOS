@@ -17,10 +17,19 @@ class SignUpViewController: BaseViewController<SignUpViewModel> {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.logoImage()
+        bindViewModel()
+        self.navigationItem.backButton(title: "취소")
     }
     
     override func viewDidLayoutSubviews() {
         nextButton.glogGradient()
+    }
+    
+    private func bindViewModel() {
+        let input = SignUpViewModel.Input(
+            nextButtonTap: nextButton.rx.tap.asObservable()
+        )
+        viewModel.transVC(input: input)
     }
 
     lazy var idTextField = UITextField().then {

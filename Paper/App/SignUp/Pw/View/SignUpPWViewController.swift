@@ -22,7 +22,7 @@ class SignUpPWViewController: BaseViewController<SignUpPWViewModel> {
     override func viewDidLayoutSubviews() {
         nextButton.glogGradient()
     }
-
+    
     lazy var pwTextField = UITextField().then {
         $0.backgroundColor = .textField
         $0.attributedPlaceholder = NSAttributedString(string: "사용하실 비밀번호를 입력해주세요", attributes: [NSAttributedString.Key.foregroundColor : UIColor(red: 1, green: 1, blue: 1, alpha: 0.48)])
@@ -31,6 +31,7 @@ class SignUpPWViewController: BaseViewController<SignUpPWViewModel> {
         $0.addLeftImage(UIImage(systemName: "lock.fill")!, x: 13, y:6)
         $0.layer.cornerRadius = 10
     }
+    
     lazy var checkPWTextField = UITextField().then {
         $0.backgroundColor = .textField
         $0.attributedPlaceholder = NSAttributedString(string: "사용하실 비밀번호를 한번 더 입력해주세요", attributes: [NSAttributedString.Key.foregroundColor : UIColor(red: 1, green: 1, blue: 1, alpha: 0.48)])

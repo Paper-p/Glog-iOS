@@ -35,4 +35,10 @@ class IntroCoordinator : Coordinator {
         let signUpVC = SignUpViewController(signUpVM)
         navigationController.pushViewController(signUpVC, animated: true)
     }
+    
+    func idNextButton() {
+        let signUpPwVM = SignUpPWViewModel(coordinator: self)
+        let signUpPwVC = SignUpPWViewController(signUpPwVM)
+        navigationController.pushViewController(signUpPwVC, animated: true)
+    }
 }
