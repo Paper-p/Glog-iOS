@@ -17,10 +17,19 @@ class SignUpPWViewController: BaseViewController<SignUpPWViewModel> {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.logoImage()
+        bindViewModel()
+        self.navigationItem.backButton(title: "취소")
     }
     
     override func viewDidLayoutSubviews() {
         nextButton.glogGradient()
+    }
+    
+    private func bindViewModel() {
+        let input = SignUpPWViewModel.Input(
+            pwnextButtonTap: nextButton.rx.tap.asObservable()
+        )
+        viewModel.transVC(input: input)
     }
     
     lazy var pwTextField = UITextField().then {

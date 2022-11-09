@@ -18,7 +18,13 @@ class SignUpPWViewModel: BaseViewModel {
     }
 
     func transVC(input: Input) {
-        
+        input.pwnextButtonTap.subscribe(
+        onNext: pwnextButton
+        ) .disposed(by: disposeBag)
+    }
+    
+    private func pwnextButton() {
+        coordinator.pwNextButton()
     }
     
 }
@@ -26,7 +32,7 @@ class SignUpPWViewModel: BaseViewModel {
 extension SignUpPWViewModel: ViewModelType{
 
     struct Input {
-
+        let pwnextButtonTap: Observable<Void>
     }
 
     struct Output {

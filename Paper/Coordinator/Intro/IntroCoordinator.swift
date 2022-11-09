@@ -43,10 +43,10 @@ class IntroCoordinator : Coordinator {
         let signUpPwVC = SignUpPWViewController(signUpPwVM)
         navigationController.pushViewController(signUpPwVC, animated: true)
     }
-//
-//    func pwNextButton() {
-//        let signUpNicknameVM = SignUpNicknameViewModel(coordinator: self)
-//        let signUpNicknamePwVC = SignUpNicknameViewController(signUpNicknameVM)
-//        navigationController.pushViewController(signUpNicknamePwVC, animated: true)
-//    }
+
+    func pwNextButton() {
+        let signUpNicknameVM = SignUpNicknameViewModel(coordinator: self)
+        let signUpNicknamePwVC = SignUpNicknameViewController(signUpNicknameVM)
+        navigationController.pushViewController(signUpNicknamePwVC, animated: true)
+    }
 }
