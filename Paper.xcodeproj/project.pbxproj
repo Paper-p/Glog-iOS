@@ -44,7 +44,6 @@
 		77F0724629192547007FE1DD /* SignUpPWViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0724529192547007FE1DD /* SignUpPWViewModel.swift */; };
 		77F0724E291925EC007FE1DD /* SignUpNicknameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0724D291925EC007FE1DD /* SignUpNicknameViewController.swift */; };
 		77F07250291925F9007FE1DD /* SignUpNicknameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0724F291925F9007FE1DD /* SignUpNicknameViewModel.swift */; };
-		77F07254291A41FB007FE1DD /* SignUpCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F07253291A41FB007FE1DD /* SignUpCoordinator.swift */; };
 		77F13A87290F6F7900F7354A /* ViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F13A86290F6F7900F7354A /* ViewModelProtocol.swift */; };
 		77F59A0A290A841A0096FA36 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F59A09290A841A0096FA36 /* BaseViewModel.swift */; };
 /* End PBXBuildFile section */
@@ -83,7 +82,6 @@
 		77F0724529192547007FE1DD /* SignUpPWViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpPWViewModel.swift; sourceTree = "<group>"; };
 		77F0724D291925EC007FE1DD /* SignUpNicknameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpNicknameViewController.swift; sourceTree = "<group>"; };
 		77F0724F291925F9007FE1DD /* SignUpNicknameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpNicknameViewModel.swift; sourceTree = "<group>"; };
-		77F07253291A41FB007FE1DD /* SignUpCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpCoordinator.swift; sourceTree = "<group>"; };
 		77F13A86290F6F7900F7354A /* ViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelProtocol.swift; sourceTree = "<group>"; };
 		77F59A09290A841A0096FA36 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -367,7 +365,6 @@
 		77F07252291A41E3007FE1DD /* SignUp */ = {
 			isa = PBXGroup;
 			children = (
-				77F07253291A41FB007FE1DD /* SignUpCoordinator.swift */,
 			);
 			path = SignUp;
 			sourceTree = "<group>";
@@ -493,7 +490,6 @@
 				7726D1662918C28200EFC325 /* UIView+glogGradient.swift in Sources */,
 				7743A41628BE07260089B473 /* SceneDelegate.swift in Sources */,
 				772FF6B52908038B0043C187 /* SignInViewModel.swift in Sources */,
-				77F07254291A41FB007FE1DD /* SignUpCoordinator.swift in Sources */,
 				772FF6B3290803760043C187 /* SignUpViewModel.swift in Sources */,
 				77F07250291925F9007FE1DD /* SignUpNicknameViewModel.swift in Sources */,
 				779AC89428E959DD006C4ACE /* IntroViewModel.swift in Sources */,
