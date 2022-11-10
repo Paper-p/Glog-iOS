@@ -25,7 +25,11 @@ class SignInViewController: BaseViewController<SignInViewModel> {
     let underText = UILabel().then {
         $0.text = "다시 온걸 환영해요!"
         $0.textColor = .white
-         $0.font = UIFont(name: "Pretendard-SemiBold", size: 20)
+        $0.font = UIFont(name: "Pretendard-SemiBold", size: 20)
+    }
+    
+    let signInNextLogo = UIImageView().then {
+        $0.image = UIImage(named: "signInNextLogo.png")
     }
     
     lazy var idTextField = UITextField().then {
@@ -54,12 +58,17 @@ class SignInViewController: BaseViewController<SignInViewModel> {
     }
     
     override func addView() {
-        [signInLogo,underText, idTextField,pwTextField, signInButton].forEach {
+        [signInNextLogo,signInLogo,underText,idTextField,pwTextField,signInButton].forEach {
             view.addSubview($0)
         }
     }
     
     override func setLayout() {
+        signInNextLogo.snp.makeConstraints {
+            $0.top.equalTo(view.snp.top).offset((bounds.height) / 4.56)
+            $0.leading.equalTo(view.snp.leading).offset(34)
+        }
+        
         signInLogo.snp.makeConstraints{
             $0.top.equalTo(view.snp.top).offset((bounds.height) / 4.56)
             $0.leading.equalTo(view.snp.leading).offset((bounds.width) / 3.51)

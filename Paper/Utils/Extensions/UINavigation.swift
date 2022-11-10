@@ -14,7 +14,7 @@ extension UINavigationItem {
         self.backBarButtonItem = backBarButtonItem
     }
     func logoImage() {
-        let logo = UIImage(named: "navLogo.svg")
+        let logo = UIImage(named: "navLogo.png")
         self.titleView = UIImageView(image: logo)
     }
 }
