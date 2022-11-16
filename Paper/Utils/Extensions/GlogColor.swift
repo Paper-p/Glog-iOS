@@ -8,9 +8,9 @@
 import UIKit
 
 extension UIColor {
-    static var backgroundColor = UIColor(named: "backgroundColor")
-    static var Gradient1 = UIColor(named: "Gradient1")
-    static var Gradient2 = UIColor(named: "Gradient2")
-    static var textField = UIColor(named: "textField")
-    static var icon = UIColor(named: "icon")
+    static let backgroundColor = UIColor(named: "backgroundColor")
+    static let Gradient1 = UIColor(named: "Gradient1")
+    static let Gradient2 = UIColor(named: "Gradient2")
+    static let textField = UIColor(named: "textField")
+    static let icon = UIColor(named: "icon")
 }
