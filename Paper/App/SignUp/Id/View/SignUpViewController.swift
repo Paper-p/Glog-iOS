@@ -36,7 +36,7 @@ class SignUpViewController: BaseViewController<SignUpViewModel> {
         $0.backgroundColor = .textField
         $0.attributedPlaceholder = NSAttributedString(string: "사용하실 아이디를 입력해주세요", attributes: [NSAttributedString.Key.foregroundColor : UIColor(red: 1, green: 1, blue: 1, alpha: 0.48)])
         $0.textColor = UIColor(red: 1.00, green: 1.00, blue: 1.00, alpha: 0.48)
-        $0.font = UIFont(name: "Pretendard-Medium", size: 16)
+        $0.font = UIFont.GlogFont(size: 16, family: .Medium)
         $0.addLeftImage(UIImage(systemName: "person.fill")!, x: 13, y:7)
         $0.layer.cornerRadius = 10
     }
@@ -49,7 +49,7 @@ class SignUpViewController: BaseViewController<SignUpViewModel> {
     lazy var nextButton = UIButton().then {
         let text = NSAttributedString(string: "다음")
         $0.setAttributedTitle(text, for: .normal)
-        $0.titleLabel?.font = UIFont(name: "Pretendard-ExtraBold", size: 18)
+        $0.titleLabel?.font = UIFont.GlogFont(size: 18, family: .ExtraBold)
         $0.setTitleColor(UIColor.black, for: .normal)
     }
     

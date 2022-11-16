@@ -33,7 +33,7 @@ class SignInViewController: BaseViewController<SignInViewModel> {
     let underText = UILabel().then {
         $0.text = "다시 온걸 환영해요!"
         $0.textColor = .white
-        $0.font = UIFont(name: "Pretendard-SemiBold", size: 20)
+        $0.font = UIFont.GlogFont(size: 20, family: .SemiBold)
     }
     
     let signInNextLogo = UIImageView().then {
@@ -44,7 +44,7 @@ class SignInViewController: BaseViewController<SignInViewModel> {
         $0.backgroundColor = .textField
         $0.attributedPlaceholder = NSAttributedString(string: "아이디를 입력해주세요.", attributes: [NSAttributedString.Key.foregroundColor : UIColor(red: 1, green: 1, blue: 1, alpha: 0.48)])
         $0.textColor = UIColor(red: 1.00, green: 1.00, blue: 1.00, alpha: 0.48)
-        $0.font = UIFont(name: "Pretendard-Medium", size: 16)
+        $0.font = UIFont.GlogFont(size: 16, family: .Medium)
         $0.addLeftImage(UIImage(systemName: "person.fill")!, x: 13, y:7)
         $0.layer.cornerRadius = 10
     }
@@ -53,7 +53,7 @@ class SignInViewController: BaseViewController<SignInViewModel> {
         $0.backgroundColor = .textField
         $0.attributedPlaceholder = NSAttributedString(string: "비밀번호를 입력해주세요", attributes: [NSAttributedString.Key.foregroundColor : UIColor(red: 1, green: 1, blue: 1, alpha: 0.48)])
         $0.textColor = UIColor(red: 1.00, green: 1.00, blue: 1.00, alpha: 0.48)
-        $0.font = UIFont(name: "Pretendard-Medium", size: 16)
+        $0.font = UIFont.GlogFont(size: 16, family: .Medium)
         $0.addLeftImage(UIImage(systemName: "lock.fill")!, x: 13, y: 6)
         $0.layer.cornerRadius = 10
     }
@@ -61,7 +61,7 @@ class SignInViewController: BaseViewController<SignInViewModel> {
     lazy var signInButton = UIButton().then {
         let text = NSAttributedString(string: "로그인")
         $0.setAttributedTitle(text, for: .normal)
-        $0.titleLabel?.font = UIFont(name: "Pretendard-ExtraBold", size: 18)
+        $0.titleLabel?.font = UIFont.GlogFont(size: 18, family: .ExtraBold)
         $0.setTitleColor(UIColor.black, for: .normal)
     }
     

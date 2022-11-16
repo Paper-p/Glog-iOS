@@ -41,7 +41,7 @@ final class IntroViewController: BaseViewController<IntroViewModel> {
         $0.numberOfLines = 2
         $0.textAlignment = .center
         $0.textColor = UIColor(red: 227/255, green: 227/255, blue: 227/255, alpha: 1)
-        $0.font = UIFont(name: "Pretendard-Bold", size: 18)
+        $0.font = UIFont.GlogFont(size: 18, family: .Bold)
     }
     
     let logo = UIImageView().then {
@@ -60,7 +60,7 @@ final class IntroViewController: BaseViewController<IntroViewModel> {
     lazy var signInButton = UIButton().then {
         let text = NSAttributedString(string: "로그인")
         $0.setAttributedTitle(text, for: .normal)
-        $0.titleLabel?.font = UIFont(name: "Pretendard-ExtraBold", size: 18)
+        $0.titleLabel?.font = UIFont.GlogFont(size: 18, family: .ExtraBold)
         $0.setTitleColor(UIColor.black, for: .normal)
     }
     
@@ -68,7 +68,7 @@ final class IntroViewController: BaseViewController<IntroViewModel> {
         let text = NSAttributedString(string: "회원가입")
         $0.setAttributedTitle(text, for: .normal)
         $0.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0)
-        $0.titleLabel?.font = UIFont(name: "Pretendard-ExtraBold", size: 18)
+        $0.titleLabel?.font = UIFont.GlogFont(size: 18, family: .ExtraBold)
         $0.setTitleColor(UIColor(red: 23/255, green: 205/255, blue: 111/255, alpha: 1), for: .normal)
         $0.layer.borderWidth = 1
         $0.layer.borderColor = UIColor.Gradient2!.cgColor

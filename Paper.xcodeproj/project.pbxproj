@@ -46,6 +46,7 @@
 		77F07250291925F9007FE1DD /* SignUpNicknameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0724F291925F9007FE1DD /* SignUpNicknameViewModel.swift */; };
 		77F0726D29246C2C007FE1DD /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0726C29246C2C007FE1DD /* MainViewController.swift */; };
 		77F0726F29246C3C007FE1DD /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0726E29246C3C007FE1DD /* MainViewModel.swift */; };
+		77F072712924F4D7007FE1DD /* GlogFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F072702924F4D7007FE1DD /* GlogFont.swift */; };
 		77F13A87290F6F7900F7354A /* ViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F13A86290F6F7900F7354A /* ViewModelProtocol.swift */; };
 		77F59A0A290A841A0096FA36 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F59A09290A841A0096FA36 /* BaseViewModel.swift */; };
 /* End PBXBuildFile section */
@@ -86,6 +87,7 @@
 		77F0724F291925F9007FE1DD /* SignUpNicknameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpNicknameViewModel.swift; sourceTree = "<group>"; };
 		77F0726C29246C2C007FE1DD /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		77F0726E29246C3C007FE1DD /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		77F072702924F4D7007FE1DD /* GlogFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlogFont.swift; sourceTree = "<group>"; };
 		77F13A86290F6F7900F7354A /* ViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelProtocol.swift; sourceTree = "<group>"; };
 		77F59A09290A841A0096FA36 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -122,6 +124,7 @@
 				7726D1672918C4C800EFC325 /* UINavigation.swift */,
 				77F072362918F1CD007FE1DD /* GlogColor.swift */,
 				77F072382918F22F007FE1DD /* PageUI.swift */,
+				77F072702924F4D7007FE1DD /* GlogFont.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -503,6 +506,7 @@
 				7756F2D328FFEBB500F22B4C /* Coordinator.swift in Sources */,
 				7756F2F02902178E00F22B4C /* SignUpViewController.swift in Sources */,
 				7726D1662918C28200EFC325 /* UIView+glogGradient.swift in Sources */,
+				77F072712924F4D7007FE1DD /* GlogFont.swift in Sources */,
 				7743A41628BE07260089B473 /* SceneDelegate.swift in Sources */,
 				772FF6B52908038B0043C187 /* SignInViewModel.swift in Sources */,
 				772FF6B3290803760043C187 /* SignUpViewModel.swift in Sources */,

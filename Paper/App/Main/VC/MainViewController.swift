@@ -31,7 +31,7 @@ class MainViewController: BaseViewController<MainViewModel> {
     
     let mainText = UILabel().then {
         $0.text = "너의 생각을 \n글로 표현해봐!"
-        $0.font = UIFont(name: "Pretendard-Bold", size: 40)
+        $0.font = UIFont.GlogFont(size: 40, family: .Bold)
         $0.textColor = .white
         $0.numberOfLines = 2
     }
@@ -39,14 +39,14 @@ class MainViewController: BaseViewController<MainViewModel> {
     lazy var writeButton = UIButton().then {
         let text = NSAttributedString(string: "게시글 작성하러 가기")
         $0.setAttributedTitle(text, for: .normal)
-        $0.titleLabel?.font = UIFont(name: "Pretendard-ExtraBold", size: 18)
+        $0.titleLabel?.font = UIFont.GlogFont(size: 18, family: .ExtraBold)
         $0.setTitleColor(UIColor.black, for: .normal)
     }
     
     lazy var hotButton = UIButton().then {
         let text = NSAttributedString(string: "🔥 HOT'")
         $0.setAttributedTitle(text, for: .normal)
-        $0.titleLabel?.font = UIFont(name: "Pretendard-ExtraBold", size: 18)
+        $0.titleLabel?.font = UIFont.GlogFont(size: 18, family: .ExtraBold)
         $0.setTitleColor(UIColor(red: 150/255, green: 150/255, blue: 150/255, alpha: 1.0), for: .normal)
         $0.backgroundColor = UIColor(red: 51/255, green: 51/255, blue: 51/255, alpha: 0.6)
         $0.layer.cornerRadius = 10

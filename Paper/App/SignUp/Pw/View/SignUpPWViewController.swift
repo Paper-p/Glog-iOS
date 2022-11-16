@@ -36,7 +36,7 @@ class SignUpPWViewController: BaseViewController<SignUpPWViewModel> {
         $0.backgroundColor = .textField
         $0.attributedPlaceholder = NSAttributedString(string: "사용하실 비밀번호를 입력해주세요", attributes: [NSAttributedString.Key.foregroundColor : UIColor(red: 1, green: 1, blue: 1, alpha: 0.48)])
         $0.textColor = UIColor(red: 1.00, green: 1.00, blue: 1.00, alpha: 0.48)
-        $0.font = UIFont(name: "Pretendard-Medium", size: 16)
+        $0.font = UIFont.GlogFont(size: 16, family: .Medium)
         $0.addLeftImage(UIImage(systemName: "lock.fill")!, x: 13, y:6)
         $0.layer.cornerRadius = 10
         $0.isSecureTextEntry = true
@@ -46,7 +46,7 @@ class SignUpPWViewController: BaseViewController<SignUpPWViewModel> {
         $0.backgroundColor = .textField
         $0.attributedPlaceholder = NSAttributedString(string: "사용하실 비밀번호를 한번 더 입력해주세요", attributes: [NSAttributedString.Key.foregroundColor : UIColor(red: 1, green: 1, blue: 1, alpha: 0.48)])
         $0.textColor = UIColor(red: 1.00, green: 1.00, blue: 1.00, alpha: 0.48)
-        $0.font = UIFont(name: "Pretendard-Medium", size: 16)
+        $0.font = UIFont.GlogFont(size: 16, family: .Medium)
         $0.addLeftImage(UIImage(systemName: "lock.fill")!, x: 13, y:6)
         $0.layer.cornerRadius = 10
         $0.isSecureTextEntry = true
@@ -59,14 +59,14 @@ class SignUpPWViewController: BaseViewController<SignUpPWViewModel> {
     
     let extext = UILabel().then {
         $0.text = "비밀번호는 8자리 이상 및 기호를 포함해주세요."
-        $0.font = UIFont(name: "Pretendard-Regular", size: 14)
+        $0.font = UIFont.GlogFont(size: 14, family: .Regular)
         $0.textColor = UIColor(red: 234/255, green: 234/255, blue: 234/255, alpha: 1.0)
     }
     
     lazy var nextButton = UIButton().then {
         let text = NSAttributedString(string: "다음")
         $0.setAttributedTitle(text, for: .normal)
-        $0.titleLabel?.font = UIFont(name: "Pretendard-ExtraBold", size: 18)
+        $0.titleLabel?.font = UIFont.GlogFont(size: 18, family: .ExtraBold)
         $0.setTitleColor(UIColor.black, for: .normal)
     }
     
