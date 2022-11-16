@@ -32,16 +32,24 @@ final class IntroViewController: BaseViewController<IntroViewModel> {
         viewModel.transVC(input: input)
     }
     
+    let bg = UIImageView().then {
+        $0.image = UIImage(named: "bg.png")
+    }
+    
     let underText = UILabel().then {
         $0.text = "여기서 너의 생각을 \n 남들에게 이야기해봐"
         $0.numberOfLines = 2
         $0.textAlignment = .center
         $0.textColor = UIColor(red: 227/255, green: 227/255, blue: 227/255, alpha: 1)
-        $0.font = UIFont(name: "Pretendard-Bold", size: 18)
+        $0.font = UIFont.GlogFont(size: 18, family: .Bold)
     }
     
     let logo = UIImageView().then {
         $0.image = UIImage(named: "Logo.svg")
+    }
+    
+    let nextLogo = UIImageView().then {
+        $0.image = UIImage(named: "nextlogo.png")
     }
     
     let backgroundView = UIView().then {
@@ -52,7 +60,7 @@ final class IntroViewController: BaseViewController<IntroViewModel> {
     lazy var signInButton = UIButton().then {
         let text = NSAttributedString(string: "로그인")
         $0.setAttributedTitle(text, for: .normal)
-        $0.titleLabel?.font = UIFont(name: "Pretendard-ExtraBold", size: 18)
+        $0.titleLabel?.font = UIFont.GlogFont(size: 18, family: .ExtraBold)
         $0.setTitleColor(UIColor.black, for: .normal)
     }
     
@@ -60,7 +68,7 @@ final class IntroViewController: BaseViewController<IntroViewModel> {
         let text = NSAttributedString(string: "회원가입")
         $0.setAttributedTitle(text, for: .normal)
         $0.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0)
-        $0.titleLabel?.font = UIFont(name: "Pretendard-ExtraBold", size: 18)
+        $0.titleLabel?.font = UIFont.GlogFont(size: 18, family: .ExtraBold)
         $0.setTitleColor(UIColor(red: 23/255, green: 205/255, blue: 111/255, alpha: 1), for: .normal)
         $0.layer.borderWidth = 1
         $0.layer.borderColor = UIColor.Gradient2!.cgColor
@@ -68,12 +76,16 @@ final class IntroViewController: BaseViewController<IntroViewModel> {
     }
     
     override func addView() {
-        [backgroundView,underText,signInButton,signUpButton,logo].forEach {
+        [bg,backgroundView,underText,signInButton,signUpButton,nextLogo,logo].forEach {
             view.addSubview($0)
         }
     }
     
     override func setLayout() {
+        bg.snp.makeConstraints {
+            $0.centerX.equalToSuperview()
+            $0.top.equalTo(view.snp.top).offset(-(bounds.height) / 6.02)
+        }
         backgroundView.snp.makeConstraints {
             $0.centerX.equalToSuperview()
             $0.top.equalTo(view.snp.top).offset((bounds.height) / 3.8)
@@ -95,6 +107,10 @@ final class IntroViewController: BaseViewController<IntroViewModel> {
             $0.top.equalTo(signInButton.snp.bottom).offset(16)
             $0.height.equalTo(60)
             $0.leading.trailing.equalToSuperview().inset(12)
+        }
+        nextLogo.snp.makeConstraints {
+            $0.top.equalTo(backgroundView.snp.top).offset((bounds.height) / 8.97)
+            $0.leading.equalTo(view.snp.leading).offset((bounds.width) / 6.5)
         }
         logo.snp.makeConstraints {
             $0.centerX.equalToSuperview()

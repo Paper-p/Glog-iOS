@@ -36,6 +36,17 @@
 		779AC8B928E976BF006C4ACE /* Pretendard-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 779AC8A928E96038006C4ACE /* Pretendard-Regular.ttf */; };
 		779AC8BA28E976C2006C4ACE /* Pretendard-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 779AC8AD28E96038006C4ACE /* Pretendard-SemiBold.ttf */; };
 		779AC8BB28E976C4006C4ACE /* Pretendard-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 779AC8AA28E96038006C4ACE /* Pretendard-Thin.ttf */; };
+		77F072372918F1CD007FE1DD /* GlogColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F072362918F1CD007FE1DD /* GlogColor.swift */; };
+		77F072392918F22F007FE1DD /* PageUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F072382918F22F007FE1DD /* PageUI.swift */; };
+		77F0723D2918F67C007FE1DD /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 77F0723C2918F67C007FE1DD /* Lottie */; };
+		77F0723F29191EC0007FE1DD /* SignUpEmoji.json in Resources */ = {isa = PBXBuildFile; fileRef = 77F0723E29191EC0007FE1DD /* SignUpEmoji.json */; };
+		77F0724429192537007FE1DD /* SignUpPWViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0724329192537007FE1DD /* SignUpPWViewController.swift */; };
+		77F0724629192547007FE1DD /* SignUpPWViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0724529192547007FE1DD /* SignUpPWViewModel.swift */; };
+		77F0724E291925EC007FE1DD /* SignUpNicknameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0724D291925EC007FE1DD /* SignUpNicknameViewController.swift */; };
+		77F07250291925F9007FE1DD /* SignUpNicknameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0724F291925F9007FE1DD /* SignUpNicknameViewModel.swift */; };
+		77F0726D29246C2C007FE1DD /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0726C29246C2C007FE1DD /* MainViewController.swift */; };
+		77F0726F29246C3C007FE1DD /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0726E29246C3C007FE1DD /* MainViewModel.swift */; };
+		77F072712924F4D7007FE1DD /* GlogFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F072702924F4D7007FE1DD /* GlogFont.swift */; };
 		77F13A87290F6F7900F7354A /* ViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F13A86290F6F7900F7354A /* ViewModelProtocol.swift */; };
 		77F59A0A290A841A0096FA36 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F59A09290A841A0096FA36 /* BaseViewModel.swift */; };
 /* End PBXBuildFile section */
@@ -67,6 +78,16 @@
 		779AC8AE28E96038006C4ACE /* Pretendard-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Medium.ttf"; sourceTree = "<group>"; };
 		779AC8AF28E96038006C4ACE /* Pretendard-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-ExtraLight.ttf"; sourceTree = "<group>"; };
 		779AC8B028E96038006C4ACE /* Pretendard-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Bold.ttf"; sourceTree = "<group>"; };
+		77F072362918F1CD007FE1DD /* GlogColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlogColor.swift; sourceTree = "<group>"; };
+		77F072382918F22F007FE1DD /* PageUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageUI.swift; sourceTree = "<group>"; };
+		77F0723E29191EC0007FE1DD /* SignUpEmoji.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = SignUpEmoji.json; sourceTree = "<group>"; };
+		77F0724329192537007FE1DD /* SignUpPWViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpPWViewController.swift; sourceTree = "<group>"; };
+		77F0724529192547007FE1DD /* SignUpPWViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpPWViewModel.swift; sourceTree = "<group>"; };
+		77F0724D291925EC007FE1DD /* SignUpNicknameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpNicknameViewController.swift; sourceTree = "<group>"; };
+		77F0724F291925F9007FE1DD /* SignUpNicknameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpNicknameViewModel.swift; sourceTree = "<group>"; };
+		77F0726C29246C2C007FE1DD /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		77F0726E29246C3C007FE1DD /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		77F072702924F4D7007FE1DD /* GlogFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlogFont.swift; sourceTree = "<group>"; };
 		77F13A86290F6F7900F7354A /* ViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelProtocol.swift; sourceTree = "<group>"; };
 		77F59A09290A841A0096FA36 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -81,6 +102,7 @@
 				7756F2DD2900E88B00F22B4C /* RxSwift in Frameworks */,
 				7756F2DB2900E88B00F22B4C /* RxCocoa in Frameworks */,
 				779AC89228E8E764006C4ACE /* Moya in Frameworks */,
+				77F0723D2918F67C007FE1DD /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -100,6 +122,9 @@
 			children = (
 				7726D1652918C28200EFC325 /* UIView+glogGradient.swift */,
 				7726D1672918C4C800EFC325 /* UINavigation.swift */,
+				77F072362918F1CD007FE1DD /* GlogColor.swift */,
+				77F072382918F22F007FE1DD /* PageUI.swift */,
+				77F072702924F4D7007FE1DD /* GlogFont.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -132,6 +157,7 @@
 		7743A41228BE07260089B473 /* Paper */ = {
 			isa = PBXGroup;
 			children = (
+				77F0723E29191EC0007FE1DD /* SignUpEmoji.json */,
 				7726D1632918C27000EFC325 /* Utils */,
 				77F13A88290F9EC600F7354A /* Protocol */,
 				7756F2EE2902176600F22B4C /* App */,
@@ -165,7 +191,6 @@
 		7756F2D4290017F600F22B4C /* Coordinator */ = {
 			isa = PBXGroup;
 			children = (
-				7756F2E6290136F100F22B4C /* SignIn */,
 				7756F2D82900CA5900F22B4C /* Intro */,
 				7756F2D52900180000F22B4C /* Protocol */,
 			);
@@ -222,18 +247,12 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
-		7756F2E6290136F100F22B4C /* SignIn */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = SignIn;
-			sourceTree = "<group>";
-		};
 		7756F2EB2902172900F22B4C /* SignUp */ = {
 			isa = PBXGroup;
 			children = (
-				7756F2ED2902175900F22B4C /* ViewModel */,
-				7756F2EC2902175100F22B4C /* View */,
+				77F0724229192514007FE1DD /* Nickname */,
+				77F072412919250E007FE1DD /* Pw */,
+				77F07240291924F6007FE1DD /* Id */,
 			);
 			path = SignUp;
 			sourceTree = "<group>";
@@ -258,6 +277,7 @@
 			isa = PBXGroup;
 			children = (
 				772FF6AF29022A040043C187 /* Base */,
+				77F0726929246C0D007FE1DD /* Main */,
 				7756F2EB2902172900F22B4C /* SignUp */,
 				7756F2DF2901351700F22B4C /* SignIn */,
 				7756F2DE290134F200F22B4C /* Intro */,
@@ -279,6 +299,91 @@
 				779AC8AA28E96038006C4ACE /* Pretendard-Thin.ttf */,
 			);
 			path = font;
+			sourceTree = "<group>";
+		};
+		77F07240291924F6007FE1DD /* Id */ = {
+			isa = PBXGroup;
+			children = (
+				7756F2ED2902175900F22B4C /* ViewModel */,
+				7756F2EC2902175100F22B4C /* View */,
+			);
+			path = Id;
+			sourceTree = "<group>";
+		};
+		77F072412919250E007FE1DD /* Pw */ = {
+			isa = PBXGroup;
+			children = (
+				77F0724829192555007FE1DD /* ViewModel */,
+				77F072472919254B007FE1DD /* View */,
+			);
+			path = Pw;
+			sourceTree = "<group>";
+		};
+		77F0724229192514007FE1DD /* Nickname */ = {
+			isa = PBXGroup;
+			children = (
+				77F0724A291925B9007FE1DD /* ViewModel */,
+				77F07249291925B2007FE1DD /* View */,
+			);
+			path = Nickname;
+			sourceTree = "<group>";
+		};
+		77F072472919254B007FE1DD /* View */ = {
+			isa = PBXGroup;
+			children = (
+				77F0724329192537007FE1DD /* SignUpPWViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		77F0724829192555007FE1DD /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				77F0724529192547007FE1DD /* SignUpPWViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		77F07249291925B2007FE1DD /* View */ = {
+			isa = PBXGroup;
+			children = (
+				77F0724D291925EC007FE1DD /* SignUpNicknameViewController.swift */,
+			);
+			name = View;
+			path = "퍋ㅈ";
+			sourceTree = "<group>";
+		};
+		77F0724A291925B9007FE1DD /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				77F0724F291925F9007FE1DD /* SignUpNicknameViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		77F0726929246C0D007FE1DD /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				77F0726B29246C1C007FE1DD /* VC */,
+				77F0726A29246C16007FE1DD /* VM */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		77F0726A29246C16007FE1DD /* VM */ = {
+			isa = PBXGroup;
+			children = (
+				77F0726E29246C3C007FE1DD /* MainViewModel.swift */,
+			);
+			path = VM;
+			sourceTree = "<group>";
+		};
+		77F0726B29246C1C007FE1DD /* VC */ = {
+			isa = PBXGroup;
+			children = (
+				77F0726C29246C2C007FE1DD /* MainViewController.swift */,
+			);
+			path = VC;
 			sourceTree = "<group>";
 		};
 		77F13A88290F9EC600F7354A /* Protocol */ = {
@@ -311,6 +416,7 @@
 				779AC89128E8E764006C4ACE /* Moya */,
 				7756F2DA2900E88B00F22B4C /* RxCocoa */,
 				7756F2DC2900E88B00F22B4C /* RxSwift */,
+				77F0723C2918F67C007FE1DD /* Lottie */,
 			);
 			productName = Paper;
 			productReference = 7743A41028BE07260089B473 /* Paper.app */;
@@ -345,6 +451,7 @@
 				779AC88D28E8E6FB006C4ACE /* XCRemoteSwiftPackageReference "Then" */,
 				779AC89028E8E764006C4ACE /* XCRemoteSwiftPackageReference "Moya" */,
 				7756F2D92900E88B00F22B4C /* XCRemoteSwiftPackageReference "RxSwift" */,
+				77F0723B2918F67C007FE1DD /* XCRemoteSwiftPackageReference "lottie-ios" */,
 			);
 			productRefGroup = 7743A41128BE07260089B473 /* Products */;
 			projectDirPath = "";
@@ -366,6 +473,7 @@
 				779AC8B328E976AE006C4ACE /* Pretendard-Bold.ttf in Resources */,
 				779AC8B528E976B5006C4ACE /* Pretendard-ExtraBold.ttf in Resources */,
 				779AC8B628E976B8006C4ACE /* Pretendard-ExtraLight.ttf in Resources */,
+				77F0723F29191EC0007FE1DD /* SignUpEmoji.json in Resources */,
 				779AC8B928E976BF006C4ACE /* Pretendard-Regular.ttf in Resources */,
 				7743A41D28BE07280089B473 /* Assets.xcassets in Resources */,
 				779AC8BB28E976C4006C4ACE /* Pretendard-Thin.ttf in Resources */,
@@ -382,19 +490,28 @@
 			buildActionMask = 2147483647;
 			files = (
 				7756F2E22901354500F22B4C /* SignInViewController.swift in Sources */,
+				77F0726D29246C2C007FE1DD /* MainViewController.swift in Sources */,
 				7726D1682918C4C800EFC325 /* UINavigation.swift in Sources */,
+				77F072372918F1CD007FE1DD /* GlogColor.swift in Sources */,
 				7743A41828BE07260089B473 /* IntroViewController.swift in Sources */,
+				77F0724E291925EC007FE1DD /* SignUpNicknameViewController.swift in Sources */,
+				77F072392918F22F007FE1DD /* PageUI.swift in Sources */,
+				77F0724429192537007FE1DD /* SignUpPWViewController.swift in Sources */,
 				772FF6AE29021C4B0043C187 /* IntroCoordinator.swift in Sources */,
 				7743A41428BE07260089B473 /* AppDelegate.swift in Sources */,
 				77F13A87290F6F7900F7354A /* ViewModelProtocol.swift in Sources */,
+				77F0724629192547007FE1DD /* SignUpPWViewModel.swift in Sources */,
 				772FF6B129022A130043C187 /* BaseViewController.swift in Sources */,
 				77F59A0A290A841A0096FA36 /* BaseViewModel.swift in Sources */,
 				7756F2D328FFEBB500F22B4C /* Coordinator.swift in Sources */,
 				7756F2F02902178E00F22B4C /* SignUpViewController.swift in Sources */,
 				7726D1662918C28200EFC325 /* UIView+glogGradient.swift in Sources */,
+				77F072712924F4D7007FE1DD /* GlogFont.swift in Sources */,
 				7743A41628BE07260089B473 /* SceneDelegate.swift in Sources */,
 				772FF6B52908038B0043C187 /* SignInViewModel.swift in Sources */,
 				772FF6B3290803760043C187 /* SignUpViewModel.swift in Sources */,
+				77F07250291925F9007FE1DD /* SignUpNicknameViewModel.swift in Sources */,
+				77F0726F29246C3C007FE1DD /* MainViewModel.swift in Sources */,
 				779AC89428E959DD006C4ACE /* IntroViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -635,6 +752,14 @@
 				kind = branch;
 			};
 		};
+		77F0723B2918F67C007FE1DD /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -662,6 +787,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 779AC89028E8E764006C4ACE /* XCRemoteSwiftPackageReference "Moya" */;
 			productName = Moya;
+		};
+		77F0723C2918F67C007FE1DD /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 77F0723B2918F67C007FE1DD /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

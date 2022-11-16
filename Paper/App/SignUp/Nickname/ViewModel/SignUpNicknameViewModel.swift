@@ -1,38 +1,38 @@
 //
-//  SignInViewModel.swift
+//  SignUpNicknameViewModel.swift
 //  Paper
 //
-//  Created by 선민재 on 2022/10/25.
+//  Created by 선민재 on 2022/11/07.
 //
-
 
 import UIKit
 import RxSwift
 import RxCocoa
 
-final class SignInViewModel:BaseViewModel {
+class SignUpNicknameViewModel:BaseViewModel{
+    
     var coordinator: IntroCoordinator
     
     init(coordinator: IntroCoordinator){
         self.coordinator = coordinator
     }
-    
+
     func transVC(input: Input) {
-        input.signInButtonTap.subscribe(
-        onNext: signInButton
+        input.completeButtonTap.subscribe(
+        onNext: completeButton
         ) .disposed(by: disposeBag)
     }
     
-    private func signInButton() {
+    private func completeButton() {
         coordinator.pushMainVC()
     }
     
 }
 
-extension SignInViewModel: ViewModelType{
+extension SignUpNicknameViewModel: ViewModelType{
 
     struct Input {
-        let signInButtonTap: Observable<Void>
+        let completeButtonTap: Observable<Void>
     }
 
     struct Output {

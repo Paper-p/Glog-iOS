@@ -1,38 +1,38 @@
 //
-//  SignInViewModel.swift
+//  SignUpPWViewModel.swift
 //  Paper
 //
-//  Created by 선민재 on 2022/10/25.
+//  Created by 선민재 on 2022/11/07.
 //
-
 
 import UIKit
 import RxSwift
 import RxCocoa
 
-final class SignInViewModel:BaseViewModel {
+class SignUpPWViewModel: BaseViewModel {
+    
     var coordinator: IntroCoordinator
     
     init(coordinator: IntroCoordinator){
         self.coordinator = coordinator
     }
-    
+
     func transVC(input: Input) {
-        input.signInButtonTap.subscribe(
-        onNext: signInButton
+        input.pwnextButtonTap.subscribe(
+        onNext: pwnextButton
         ) .disposed(by: disposeBag)
     }
     
-    private func signInButton() {
-        coordinator.pushMainVC()
+    private func pwnextButton() {
+        coordinator.pwNextButton()
     }
     
 }
 
-extension SignInViewModel: ViewModelType{
+extension SignUpPWViewModel: ViewModelType{
 
     struct Input {
-        let signInButtonTap: Observable<Void>
+        let pwnextButtonTap: Observable<Void>
     }
 
     struct Output {
