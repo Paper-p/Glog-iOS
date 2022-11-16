@@ -16,6 +16,7 @@ class MainViewController: BaseViewController<MainViewModel> {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.mainLogoImage()
+        self.navigationItem.mainProfileImage()
     }
     
 //    override func addView() {

@@ -25,4 +25,9 @@ extension UINavigationItem {
         self.leftBarButtonItem = UIBarButtonItem(image: logo, style:.plain, target: nil, action: nil)
     }
     
+    func mainProfileImage() {
+        var profile = UIImage(named: "dummyProfile.png")
+        profile = profile?.withRenderingMode(.alwaysOriginal)
+        self.rightBarButtonItem = UIBarButtonItem(image: profile, style:.plain, target: nil, action: nil)
+    }
 }
