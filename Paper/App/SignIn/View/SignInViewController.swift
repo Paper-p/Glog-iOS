@@ -16,6 +16,14 @@ class SignInViewController: BaseViewController<SignInViewModel> {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         signInButton.glogGradient()
+        bindViewModel()
+    }
+    
+    private func bindViewModel() {
+        let input = SignInViewModel.Input(
+            signInButtonTap: signInButton.rx.tap.asObservable()
+        )
+        viewModel.transVC(input: input)
     }
     
     let signInLogo = UIImageView().then {

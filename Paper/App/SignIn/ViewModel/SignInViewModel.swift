@@ -17,4 +17,25 @@ final class SignInViewModel:BaseViewModel {
         self.coordinator = coordinator
     }
     
+    func transVC(input: Input) {
+        input.signInButtonTap.subscribe(
+        onNext: signInButton
+        ) .disposed(by: disposeBag)
+    }
+    
+    private func signInButton() {
+        coordinator.pushMainVC()
+    }
+    
+}
+
+extension SignInViewModel: ViewModelType{
+
+    struct Input {
+        let signInButtonTap: Observable<Void>
+    }
+
+    struct Output {
+        
+    }
 }

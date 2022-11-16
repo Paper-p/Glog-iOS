@@ -17,19 +17,19 @@ class SignUpNicknameViewController: BaseViewController<SignUpNicknameViewModel> 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.logoImage()
-//        bindViewModel()
+        bindViewModel()
     }
     
     override func viewDidLayoutSubviews() {
         completeButton.glogGradient()
     }
     
-//    private func bindViewModel() {
-//        let input = SignUpViewModel.Input(
-//            nextButtonTap: nextButton.rx.tap.asObservable()
-//        )
-//        viewModel.transVC(input: input)
-//    }
+    private func bindViewModel() {
+        let input = SignUpNicknameViewModel.Input(
+            completeButtonTap: completeButton.rx.tap.asObservable()
+        )
+        viewModel.transVC(input: input)
+    }
 
     lazy var nicknameTextField = UITextField().then {
         $0.backgroundColor = .textField

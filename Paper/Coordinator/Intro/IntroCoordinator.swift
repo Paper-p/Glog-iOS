@@ -49,4 +49,10 @@ class IntroCoordinator : Coordinator {
         let signUpNicknamePwVC = SignUpNicknameViewController(signUpNicknameVM)
         navigationController.pushViewController(signUpNicknamePwVC, animated: true)
     }
+    
+    func pushMainVC() {
+        let mainVM = MainViewModel(coordinator: self)
+        let mainVC = MainViewController(mainVM)
+        navigationController.pushViewController(mainVC, animated: true)
+    }
 }

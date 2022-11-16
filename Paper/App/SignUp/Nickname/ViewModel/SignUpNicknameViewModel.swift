@@ -18,7 +18,13 @@ class SignUpNicknameViewModel:BaseViewModel{
     }
 
     func transVC(input: Input) {
-        
+        input.completeButtonTap.subscribe(
+        onNext: completeButton
+        ) .disposed(by: disposeBag)
+    }
+    
+    private func completeButton() {
+        coordinator.pushMainVC()
     }
     
 }
@@ -26,7 +32,7 @@ class SignUpNicknameViewModel:BaseViewModel{
 extension SignUpNicknameViewModel: ViewModelType{
 
     struct Input {
-
+        let completeButtonTap: Observable<Void>
     }
 
     struct Output {
