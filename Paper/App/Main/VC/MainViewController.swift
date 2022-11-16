@@ -43,8 +43,17 @@ class MainViewController: BaseViewController<MainViewModel> {
         $0.setTitleColor(UIColor.black, for: .normal)
     }
     
+    lazy var hotButton = UIButton().then {
+        let text = NSAttributedString(string: "🔥 HOT'")
+        $0.setAttributedTitle(text, for: .normal)
+        $0.titleLabel?.font = UIFont(name: "Pretendard-ExtraBold", size: 18)
+        $0.setTitleColor(UIColor(red: 150/255, green: 150/255, blue: 150/255, alpha: 1.0), for: .normal)
+        $0.backgroundColor = UIColor(red: 51/255, green: 51/255, blue: 51/255, alpha: 0.6)
+        $0.layer.cornerRadius = 10
+    }
+    
     override func addView() {
-        [mainLottie,mainText,writeButton].forEach {
+        [mainLottie,mainText,writeButton,hotButton].forEach {
             view.addSubview($0)
         }
     }
@@ -65,6 +74,12 @@ class MainViewController: BaseViewController<MainViewModel> {
             $0.centerX.equalToSuperview()
             $0.height.equalTo(60)
             $0.leading.trailing.equalToSuperview().inset(12)
+        }
+        hotButton.snp.makeConstraints {
+            $0.top.equalTo(writeButton.snp.bottom).offset((bounds.height) / 11.72)
+            $0.leading.equalToSuperview().offset(12)
+            $0.height.equalTo(42)
+            $0.width.equalTo(90)
         }
     }
 
