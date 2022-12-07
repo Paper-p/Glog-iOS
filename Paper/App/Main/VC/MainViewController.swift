@@ -18,6 +18,14 @@ class MainViewController: BaseViewController<MainViewModel> {
         super.viewDidLoad()
         self.navigationItem.mainLogoImage()
         self.navigationItem.mainProfileImage()
+        let blurEffect = UIBlurEffect(style: .regular)
+        let visualEffectView = UIVisualEffectView(effect: blurEffect)
+        visualEffectView.frame = hotTextView.frame
+//        visualEffectView.alpha = 30
+        view.addSubview(visualEffectView)
+//        carouselCollectionView.dataSource = self
+//        carouselCollectionView.delegate = self
+//        carouselCollectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cell")
     }
     
     override func viewDidLayoutSubviews() {
@@ -52,8 +60,31 @@ class MainViewController: BaseViewController<MainViewModel> {
         $0.layer.cornerRadius = 10
     }
     
+//    let carouselCollectionView: UICollectionView = {
+//
+//        let flowLayout = UICollectionViewFlowLayout()
+//        flowLayout.scrollDirection = .horizontal
+//        let collectionView = UICollectionView(frame: .init(x: 0, y: 0, width: 100, height: 100), collectionViewLayout: flowLayout)
+//        collectionView.translatesAutoresizingMaskIntoConstraints = false
+//        collectionView.backgroundColor = UIColor.red
+//
+//        return collectionView
+//
+//    }()
+    
+    let hotImage = UIImageView().then {
+        $0.image = UIImage(named: "dummyImage.svg")
+        $0.layer.cornerRadius = 10
+    }
+    
+    let hotTextView = UIView().then {
+        $0.backgroundColor = UIColor(red: 51/255, green: 51/255, blue: 51/255, alpha: 0.7)
+        $0.layer.cornerRadius = 10
+        $0.applyBlurEffect()
+    }
+    
     override func addView() {
-        [mainLottie,mainText,writeButton,hotButton].forEach {
+        [mainLottie,mainText,writeButton,hotButton,hotImage,hotTextView].forEach {
             view.addSubview($0)
         }
     }
@@ -81,6 +112,49 @@ class MainViewController: BaseViewController<MainViewModel> {
             $0.height.equalTo(42)
             $0.width.equalTo(90)
         }
+//        carouselCollectionView.snp.makeConstraints {
+//            $0.center.equalToSuperview()
+//            $0.width.equalTo(300)
+//            $0.height.equalTo(300)
+//        }
+        hotImage.snp.makeConstraints {
+            $0.top.equalTo(hotButton.snp.bottom).offset(16)
+            $0.leading.equalToSuperview().inset(12)
+        }
+        hotTextView.snp.makeConstraints {
+            $0.top.equalTo(hotImage.snp.bottom).inset(46)
+            $0.centerX.equalTo(hotImage.snp.centerX).offset(0)
+            $0.leading.equalToSuperview().inset(12)
+            $0.width.equalTo((bounds.width) / 1.2)
+            $0.height.equalTo((bounds.height) / 5.82)
+        }
     }
 
+}
+
+//extension MainViewController: UICollectionViewDataSource {
+//    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+//        return 4
+//    }
+//
+//    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+//        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
+//        cell.backgroundColor = UIColor.blue
+//        return cell
+//    }
+//}
+//
+//extension MainViewController: UICollectionViewDelegate {
+//
+//}
+
+extension UIView {
+    func applyBlurEffect() {
+        let blurEffect = UIBlurEffect(style: .dark)
+        let blurEffectView = UIVisualEffectView(effect: blurEffect)
+        blurEffectView.frame = bounds
+        blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        blurEffectView.alpha = 0.7
+        addSubview(blurEffectView)
+    }
 }
