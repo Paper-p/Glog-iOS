@@ -83,8 +83,44 @@ class MainViewController: BaseViewController<MainViewModel> {
         $0.applyBlurEffect()
     }
     
+    let titleText = UILabel().then {
+        $0.text = "유저 리서치(User Research)란?"
+        $0.font = UIFont.GlogFont(size: 20, family: .SemiBold)
+        $0.textColor = .white
+    }
+    
+    let subtitleText = UILabel().then{
+        $0.text = "일상에서 제품을 이해하고 사용하는데 영향을 미\n치는 사람의 행위와 동기, 니즈를 특정 맥락 안..."
+        $0.font = UIFont.GlogFont(size: 16, family: .Medium)
+        $0.textColor = UIColor(red: 133/255, green: 136/255, blue: 141/255, alpha: 1)
+        $0.numberOfLines = 2
+    }
+    
+    let heartLabel = UILabel().then {
+        let attributedString = NSMutableAttributedString(string: "")
+        let imageAttachment = NSTextAttachment()
+        imageAttachment.image = UIImage(named: "heartIcon.svg")
+        attributedString.append(NSAttributedString(attachment: imageAttachment))
+        attributedString.append(NSAttributedString(string: "90.9M"))
+        $0.font = UIFont.GlogFont(size: 14, family: .Medium)
+        $0.textColor = UIColor(red: 146/255, green: 146/255, blue: 146/255, alpha: 1)
+        $0.attributedText = attributedString
+    }
+    
+    let viewLabel = UILabel().then {
+        let attributedString = NSMutableAttributedString(string: "")
+        let imageAttachment = NSTextAttachment()
+        imageAttachment.image = UIImage(named: "viewIcon.svg")
+        attributedString.append(NSAttributedString(attachment: imageAttachment))
+        attributedString.append(NSAttributedString(string: "90.9M"))
+        $0.font = UIFont.GlogFont(size: 14, family: .Medium)
+        $0.textColor = UIColor(red: 146/255, green: 146/255, blue: 146/255, alpha: 1)
+        $0.attributedText = attributedString
+    }
+    
     override func addView() {
-        [mainLottie,mainText,writeButton,hotButton,hotImage,hotTextView].forEach {
+        [mainLottie,mainText,writeButton,hotButton,hotImage,hotTextView,titleText,subtitleText
+        , heartLabel, viewLabel].forEach {
             view.addSubview($0)
         }
     }
@@ -127,6 +163,22 @@ class MainViewController: BaseViewController<MainViewModel> {
             $0.leading.equalToSuperview().inset(12)
             $0.width.equalTo((bounds.width) / 1.2)
             $0.height.equalTo((bounds.height) / 5.82)
+        }
+        titleText.snp.makeConstraints {
+            $0.top.equalTo(hotTextView.snp.top).offset(10)
+            $0.leading.equalTo(hotTextView.snp.leading).offset(10)
+        }
+        subtitleText.snp.makeConstraints {
+            $0.top.equalTo(titleText.snp.bottom).offset(4)
+            $0.leading.equalTo(hotTextView.snp.leading).offset(10)
+        }
+        heartLabel.snp.makeConstraints {
+            $0.top.equalTo(titleText.snp.bottom).offset((bounds.height) / 10.292)
+            $0.leading.equalTo(hotTextView.snp.leading).offset(10)
+        }
+        viewLabel.snp.makeConstraints {
+            $0.top.equalTo(titleText.snp.bottom).offset((bounds.height) / 10.292)
+            $0.leading.equalTo(heartLabel.snp.leading).offset(8)
         }
     }
 
