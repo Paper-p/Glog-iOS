@@ -149,8 +149,22 @@ class MainViewController: BaseViewController<MainViewModel> {
         $0.attributedText = attributedString
     }
     
-    let testView = UIView().then {
-        $0.backgroundColor = .cyan
+    lazy var viewPostButton = UIButton().then {
+        let text = NSAttributedString(string: "💻 게시물's")
+        $0.setAttributedTitle(text, for: .normal)
+        $0.titleLabel?.font = UIFont.GlogFont(size: 18, family: .ExtraBold)
+        $0.setTitleColor(UIColor(red: 150/255, green: 150/255, blue: 150/255, alpha: 1.0), for: .normal)
+        $0.backgroundColor = UIColor(red: 51/255, green: 51/255, blue: 51/255, alpha: 0.6)
+        $0.layer.cornerRadius = 10
+    }
+    
+    lazy var searchTextField = UITextField().then{
+        $0.backgroundColor = .textField
+        $0.attributedPlaceholder = NSAttributedString(string: "찾고싶은 주제를 입력해주세요.", attributes: [NSAttributedString.Key.foregroundColor : UIColor(red: 1, green: 1, blue: 1, alpha: 0.48)])
+        $0.textColor = UIColor(red: 1.00, green: 1.00, blue: 1.00, alpha: 0.48)
+        $0.font = UIFont.GlogFont(size: 16, family: .Medium)
+        $0.addLeftImage(UIImage(systemName: "magnifyingglass")!, x: 13, y:7)
+        $0.layer.cornerRadius = 10
     }
     
     override func addView() {
@@ -161,7 +175,7 @@ class MainViewController: BaseViewController<MainViewModel> {
     
     func addScrollView() {
         [mainLottie,mainText,writeButton,hotButton,hotImage,hotTextView,titleText,subtitleText
-         , heartLabel, viewLabel,testView].forEach {
+         , heartLabel, viewLabel,viewPostButton,searchTextField].forEach {
             scrollView.addSubview($0)
         }
     }
@@ -228,11 +242,17 @@ class MainViewController: BaseViewController<MainViewModel> {
             $0.top.equalTo(titleText.snp.bottom).offset((bounds.height) / 10.292)
             $0.leading.equalTo(heartLabel.snp.leading).offset(8)
         }
-        testView.snp.makeConstraints {
-            $0.top.equalTo(hotTextView.snp.bottom).offset(400)
-            $0.width.height.equalTo(100)
+        viewPostButton.snp.makeConstraints {
+            $0.top.equalTo(hotTextView.snp.bottom).offset((bounds.height) / 9.37)
+            $0.leading.equalToSuperview().offset(12)
+            $0.height.equalTo(42)
+            $0.width.equalTo(109)
+        }
+        searchTextField.snp.makeConstraints {
+            $0.top.equalTo(viewPostButton.snp.bottom).offset(16)
             $0.centerX.equalToSuperview()
-            $0.bottom.equalToSuperview()
+            $0.height.equalTo((bounds.height) / 19.18)
+            $0.trailing.leading.equalToSuperview().inset(12)
         }
     }
         
