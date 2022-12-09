@@ -13,24 +13,55 @@ import SnapKit
 import Lottie
 
 class MainViewController: BaseViewController<MainViewModel> {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.navigationBar.backgroundColor = .backgroundColor
         self.navigationItem.mainLogoImage()
         self.navigationItem.mainProfileImage()
         let blurEffect = UIBlurEffect(style: .regular)
         let visualEffectView = UIVisualEffectView(effect: blurEffect)
         visualEffectView.frame = hotTextView.frame
-//        visualEffectView.alpha = 30
         view.addSubview(visualEffectView)
+        addScrollView()
+        setScrollViewLayout()
 //        carouselCollectionView.dataSource = self
 //        carouselCollectionView.delegate = self
 //        carouselCollectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cell")
+//        setUpUIConstraints()
+//        addView()
     }
     
     override func viewDidLayoutSubviews() {
         writeButton.glogGradient()
     }
+    
+    let scrollView = UIScrollView().then {
+        $0.backgroundColor = .backgroundColor
+    }
+//
+//    let subView = UIScrollView().then {
+//        $0.translatesAutoresizingMaskIntoConstraints = false
+//    }
+//
+//    func setUpUIConstraints() {
+//        NSLayoutConstraint.activate([
+//            scrollView.topAnchor.constraint(equalTo: self.view.topAnchor),
+//            scrollView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
+//            scrollView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
+//            scrollView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor),
+//            subView.topAnchor.constraint(equalTo: self.view.topAnchor),
+//            subView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
+//            subView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
+//            subView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor),
+//            subView.widthAnchor.constraint(equalTo: scrollView.widthAnchor)
+//        ])
+//    }
+//
+//    func addSubview() {
+//        self.view.addSubview(scrollView)
+//        scrollView.addSubview(subView)
+//    }
     
     let mainLottie = LottieAnimationView(name: "SignUpEmoji").then {
         $0.loopMode = .loop
@@ -118,14 +149,31 @@ class MainViewController: BaseViewController<MainViewModel> {
         $0.attributedText = attributedString
     }
     
+    let testView = UIView().then {
+        $0.backgroundColor = .cyan
+    }
+    
     override func addView() {
-        [mainLottie,mainText,writeButton,hotButton,hotImage,hotTextView,titleText,subtitleText
-        , heartLabel, viewLabel].forEach {
+        [scrollView].forEach {
             view.addSubview($0)
         }
     }
-
+    
+    func addScrollView() {
+        [mainLottie,mainText,writeButton,hotButton,hotImage,hotTextView,titleText,subtitleText
+         , heartLabel, viewLabel,testView].forEach {
+            scrollView.addSubview($0)
+        }
+    }
+    
     override func setLayout() {
+        scrollView.snp.makeConstraints {
+            $0.top.bottom.equalToSuperview()
+            $0.leading.trailing.equalToSuperview()
+        }
+    }
+    
+    func setScrollViewLayout() {
         mainLottie.snp.makeConstraints {
             $0.top.equalTo(view.snp.top).offset((bounds.height) / 6.59)
             $0.trailing.equalToSuperview().inset(13)
@@ -180,33 +228,39 @@ class MainViewController: BaseViewController<MainViewModel> {
             $0.top.equalTo(titleText.snp.bottom).offset((bounds.height) / 10.292)
             $0.leading.equalTo(heartLabel.snp.leading).offset(8)
         }
+        testView.snp.makeConstraints {
+            $0.top.equalTo(hotTextView.snp.bottom).offset(400)
+            $0.width.height.equalTo(100)
+            $0.centerX.equalToSuperview()
+            $0.bottom.equalToSuperview()
+        }
     }
-
+        
 }
-
-//extension MainViewController: UICollectionViewDataSource {
-//    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-//        return 4
+    
+//    extension MainViewController: UICollectionViewDataSource {
+//        func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+//            return 4
 //    }
 //
-//    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-//        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
-//        cell.backgroundColor = UIColor.blue
-//        return cell
+//        func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+//            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
+//            cell.backgroundColor = UIColor.blue
+//            return cell
+//        }
 //    }
-//}
 //
-//extension MainViewController: UICollectionViewDelegate {
+//    extension MainViewController: UICollectionViewDelegate {
 //
-//}
-
-extension UIView {
-    func applyBlurEffect() {
-        let blurEffect = UIBlurEffect(style: .dark)
-        let blurEffectView = UIVisualEffectView(effect: blurEffect)
-        blurEffectView.frame = bounds
-        blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        blurEffectView.alpha = 0.7
-        addSubview(blurEffectView)
+//    }
+    
+    extension UIView {
+        func applyBlurEffect() {
+            let blurEffect = UIBlurEffect(style: .dark)
+            let blurEffectView = UIVisualEffectView(effect: blurEffect)
+            blurEffectView.frame = bounds
+            blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+            blurEffectView.alpha = 0.7
+            addSubview(blurEffectView)
+        }
     }
-}
