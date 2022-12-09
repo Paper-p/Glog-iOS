@@ -16,7 +16,9 @@ class MainViewController: BaseViewController<MainViewModel> {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationController?.navigationBar.backgroundColor = .backgroundColor
+//        self.navigationController?.navigationBar.barTintColor = .backgroundColor
+//        self.navigationController?.navigationController?.navigationBar.alpha = 1.0
+        self.navigationController?.hidesBarsOnSwipe = true
         self.navigationItem.mainLogoImage()
         self.navigationItem.mainProfileImage()
         let blurEffect = UIBlurEffect(style: .regular)
@@ -189,13 +191,13 @@ class MainViewController: BaseViewController<MainViewModel> {
     
     func setScrollViewLayout() {
         mainLottie.snp.makeConstraints {
-            $0.top.equalTo(view.snp.top).offset((bounds.height) / 6.59)
+            $0.top.equalTo(scrollView.snp.top).offset(25)
             $0.trailing.equalToSuperview().inset(13)
             $0.height.equalTo(134)
             $0.width.equalTo(134)
         }
         mainText.snp.makeConstraints {
-            $0.top.equalTo(view.snp.top).offset((bounds.height) / 5.7)
+            $0.top.equalTo(scrollView.snp.top).offset(20)
             $0.leading.equalToSuperview().offset(12)
         }
         writeButton.snp.makeConstraints {
@@ -240,7 +242,7 @@ class MainViewController: BaseViewController<MainViewModel> {
         }
         viewLabel.snp.makeConstraints {
             $0.top.equalTo(titleText.snp.bottom).offset((bounds.height) / 10.292)
-            $0.leading.equalTo(heartLabel.snp.leading).offset(8)
+            $0.leading.equalTo(heartLabel.snp.trailing).offset(8)
         }
         viewPostButton.snp.makeConstraints {
             $0.top.equalTo(hotTextView.snp.bottom).offset((bounds.height) / 9.37)
@@ -253,6 +255,7 @@ class MainViewController: BaseViewController<MainViewModel> {
             $0.centerX.equalToSuperview()
             $0.height.equalTo((bounds.height) / 19.18)
             $0.trailing.leading.equalToSuperview().inset(12)
+            $0.bottom.equalToSuperview()
         }
     }
         
