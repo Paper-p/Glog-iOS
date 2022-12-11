@@ -16,8 +16,6 @@ class MainViewController: BaseViewController<MainViewModel> {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        self.navigationController?.navigationBar.barTintColor = .backgroundColor
-//        self.navigationController?.navigationController?.navigationBar.alpha = 1.0
         self.navigationController?.hidesBarsOnSwipe = true
         self.navigationItem.mainLogoImage()
         self.navigationItem.mainProfileImage()
@@ -41,29 +39,6 @@ class MainViewController: BaseViewController<MainViewModel> {
     let scrollView = UIScrollView().then {
         $0.backgroundColor = .backgroundColor
     }
-//
-//    let subView = UIScrollView().then {
-//        $0.translatesAutoresizingMaskIntoConstraints = false
-//    }
-//
-//    func setUpUIConstraints() {
-//        NSLayoutConstraint.activate([
-//            scrollView.topAnchor.constraint(equalTo: self.view.topAnchor),
-//            scrollView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
-//            scrollView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
-//            scrollView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor),
-//            subView.topAnchor.constraint(equalTo: self.view.topAnchor),
-//            subView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
-//            subView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
-//            subView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor),
-//            subView.widthAnchor.constraint(equalTo: scrollView.widthAnchor)
-//        ])
-//    }
-//
-//    func addSubview() {
-//        self.view.addSubview(scrollView)
-//        scrollView.addSubview(subView)
-//    }
     
     let mainLottie = LottieAnimationView(name: "SignUpEmoji").then {
         $0.loopMode = .loop
@@ -113,7 +88,6 @@ class MainViewController: BaseViewController<MainViewModel> {
     let hotTextView = UIView().then {
         $0.backgroundColor = UIColor(red: 51/255, green: 51/255, blue: 51/255, alpha: 0.7)
         $0.layer.cornerRadius = 10
-        $0.applyBlurEffect()
     }
     
     let titleText = UILabel().then {
@@ -133,8 +107,9 @@ class MainViewController: BaseViewController<MainViewModel> {
         let attributedString = NSMutableAttributedString(string: "")
         let imageAttachment = NSTextAttachment()
         imageAttachment.image = UIImage(named: "heartIcon.svg")
+        imageAttachment.bounds = CGRect(x: 0, y: -1, width: 16, height: 12)
         attributedString.append(NSAttributedString(attachment: imageAttachment))
-        attributedString.append(NSAttributedString(string: "90.9M"))
+        attributedString.append(NSAttributedString(string: " 90.9M"))
         $0.font = UIFont.GlogFont(size: 14, family: .Medium)
         $0.textColor = UIColor(red: 146/255, green: 146/255, blue: 146/255, alpha: 1)
         $0.attributedText = attributedString
@@ -144,8 +119,9 @@ class MainViewController: BaseViewController<MainViewModel> {
         let attributedString = NSMutableAttributedString(string: "")
         let imageAttachment = NSTextAttachment()
         imageAttachment.image = UIImage(named: "viewIcon.svg")
+        imageAttachment.bounds = CGRect(x: 1, y: -4, width: 16, height: 16)
         attributedString.append(NSAttributedString(attachment: imageAttachment))
-        attributedString.append(NSAttributedString(string: "90.9M"))
+        attributedString.append(NSAttributedString(string: " 90.9M"))
         $0.font = UIFont.GlogFont(size: 14, family: .Medium)
         $0.textColor = UIColor(red: 146/255, green: 146/255, blue: 146/255, alpha: 1)
         $0.attributedText = attributedString
@@ -169,6 +145,17 @@ class MainViewController: BaseViewController<MainViewModel> {
         $0.layer.cornerRadius = 10
     }
     
+    lazy var dotSortButton = UIButton().then {
+        $0.setImage(UIImage(named: "ham1.svg"), for: .normal)
+    }
+    
+    lazy var lineSortButton = UIButton().then {
+        $0.setImage(UIImage(named: "ham2.svg"), for: .normal)
+    }
+    
+    lazy var oneSortButton = UIButton().then {
+        $0.setImage(UIImage(named: "ham3.svg"), for: .normal)
+    }
     override func addView() {
         [scrollView].forEach {
             view.addSubview($0)
@@ -177,7 +164,8 @@ class MainViewController: BaseViewController<MainViewModel> {
     
     func addScrollView() {
         [mainLottie,mainText,writeButton,hotButton,hotImage,hotTextView,titleText,subtitleText
-         , heartLabel, viewLabel,viewPostButton,searchTextField].forEach {
+         ,heartLabel,viewLabel,viewPostButton,searchTextField,
+         dotSortButton,lineSortButton,oneSortButton].forEach {
             scrollView.addSubview($0)
         }
     }
@@ -191,7 +179,7 @@ class MainViewController: BaseViewController<MainViewModel> {
     
     func setScrollViewLayout() {
         mainLottie.snp.makeConstraints {
-            $0.top.equalTo(scrollView.snp.top).offset(25)
+            $0.top.equalTo(scrollView.snp.top).offset(0)
             $0.trailing.equalToSuperview().inset(13)
             $0.height.equalTo(134)
             $0.width.equalTo(134)
@@ -257,6 +245,24 @@ class MainViewController: BaseViewController<MainViewModel> {
             $0.trailing.leading.equalToSuperview().inset(12)
             $0.bottom.equalToSuperview()
         }
+        dotSortButton.snp.makeConstraints {
+            $0.centerY.equalTo(viewPostButton.snp.centerY).offset(0)
+            $0.trailing.equalTo(scrollView.snp.trailing).inset((bounds.width) / 5.57)
+            $0.height.equalTo(21)
+            $0.width.equalTo(21)
+        }
+        lineSortButton.snp.makeConstraints {
+            $0.centerY.equalTo(viewPostButton.snp.centerY).offset(0)
+            $0.leading.equalTo(dotSortButton.snp.trailing).offset(8)
+            $0.height.equalTo(21)
+            $0.width.equalTo(21)
+        }
+        oneSortButton.snp.makeConstraints {
+            $0.centerY.equalTo(viewPostButton.snp.centerY).offset(0)
+            $0.leading.equalTo(lineSortButton.snp.trailing).offset(8)
+            $0.height.equalTo(21)
+            $0.width.equalTo(21)
+        }
     }
         
 }
@@ -276,14 +282,3 @@ class MainViewController: BaseViewController<MainViewModel> {
 //    extension MainViewController: UICollectionViewDelegate {
 //
 //    }
-    
-    extension UIView {
-        func applyBlurEffect() {
-            let blurEffect = UIBlurEffect(style: .dark)
-            let blurEffectView = UIVisualEffectView(effect: blurEffect)
-            blurEffectView.frame = bounds
-            blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-            blurEffectView.alpha = 0.7
-            addSubview(blurEffectView)
-        }
-    }
