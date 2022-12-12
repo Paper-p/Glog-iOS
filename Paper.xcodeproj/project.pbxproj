@@ -36,6 +36,7 @@
 		779AC8B928E976BF006C4ACE /* Pretendard-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 779AC8A928E96038006C4ACE /* Pretendard-Regular.ttf */; };
 		779AC8BA28E976C2006C4ACE /* Pretendard-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 779AC8AD28E96038006C4ACE /* Pretendard-SemiBold.ttf */; };
 		779AC8BB28E976C4006C4ACE /* Pretendard-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 779AC8AA28E96038006C4ACE /* Pretendard-Thin.ttf */; };
+		779DC5FE2946F5FB0034010F /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 779DC5FD2946F5FB0034010F /* PostTableViewCell.swift */; };
 		77F072372918F1CD007FE1DD /* GlogColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F072362918F1CD007FE1DD /* GlogColor.swift */; };
 		77F072392918F22F007FE1DD /* PageUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F072382918F22F007FE1DD /* PageUI.swift */; };
 		77F0723D2918F67C007FE1DD /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 77F0723C2918F67C007FE1DD /* Lottie */; };
@@ -78,6 +79,7 @@
 		779AC8AE28E96038006C4ACE /* Pretendard-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Medium.ttf"; sourceTree = "<group>"; };
 		779AC8AF28E96038006C4ACE /* Pretendard-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-ExtraLight.ttf"; sourceTree = "<group>"; };
 		779AC8B028E96038006C4ACE /* Pretendard-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Bold.ttf"; sourceTree = "<group>"; };
+		779DC5FD2946F5FB0034010F /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
 		77F072362918F1CD007FE1DD /* GlogColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlogColor.swift; sourceTree = "<group>"; };
 		77F072382918F22F007FE1DD /* PageUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageUI.swift; sourceTree = "<group>"; };
 		77F0723E29191EC0007FE1DD /* SignUpEmoji.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = SignUpEmoji.json; sourceTree = "<group>"; };
@@ -168,6 +170,7 @@
 				7743A41C28BE07280089B473 /* Assets.xcassets */,
 				7743A41E28BE07280089B473 /* LaunchScreen.storyboard */,
 				7743A42128BE07280089B473 /* Info.plist */,
+				779DC5FD2946F5FB0034010F /* PostTableViewCell.swift */,
 			);
 			path = Paper;
 			sourceTree = "<group>";
@@ -506,6 +509,7 @@
 				7756F2D328FFEBB500F22B4C /* Coordinator.swift in Sources */,
 				7756F2F02902178E00F22B4C /* SignUpViewController.swift in Sources */,
 				7726D1662918C28200EFC325 /* UIView+glogGradient.swift in Sources */,
+				779DC5FE2946F5FB0034010F /* PostTableViewCell.swift in Sources */,
 				77F072712924F4D7007FE1DD /* GlogFont.swift in Sources */,
 				7743A41628BE07260089B473 /* SceneDelegate.swift in Sources */,
 				772FF6B52908038B0043C187 /* SignInViewModel.swift in Sources */,

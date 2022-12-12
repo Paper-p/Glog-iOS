@@ -12,14 +12,18 @@ import Then
 import SnapKit
 import Lottie
 
-class MainViewController: BaseViewController<MainViewModel> {
+class MainViewController: BaseViewController<MainViewModel>, UITableViewDelegate, UITableViewDataSource{
+
+    var postTableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.hidesBarsOnSwipe = true
         self.navigationItem.mainLogoImage()
         self.navigationItem.mainProfileImage()
-        let blurEffect = UIBlurEffect(style: .regular)
+        postTableView = UITableView()
+        settingTable()
+        let blurEffect = UIBlurEffect(style: .dark)
         let visualEffectView = UIVisualEffectView(effect: blurEffect)
         visualEffectView.frame = hotTextView.frame
         view.addSubview(visualEffectView)
@@ -34,6 +38,20 @@ class MainViewController: BaseViewController<MainViewModel> {
     
     override func viewDidLayoutSubviews() {
         writeButton.glogGradient()
+    }
+    
+    func settingTable() {
+        postTableView.dataSource = self
+        postTableView.delegate = self
+        postTableView.register(PostTableViewCell.self, forCellReuseIdentifier: PostTableViewCell.identifier)
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        <#code#>
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        <#code#>
     }
     
     let scrollView = UIScrollView().then {
@@ -156,6 +174,7 @@ class MainViewController: BaseViewController<MainViewModel> {
     lazy var oneSortButton = UIButton().then {
         $0.setImage(UIImage(named: "ham3.svg"), for: .normal)
     }
+    
     override func addView() {
         [scrollView].forEach {
             view.addSubview($0)
@@ -208,9 +227,11 @@ class MainViewController: BaseViewController<MainViewModel> {
         hotImage.snp.makeConstraints {
             $0.top.equalTo(hotButton.snp.bottom).offset(16)
             $0.leading.equalToSuperview().inset(12)
+            $0.width.equalTo((bounds.width) / 1.2)
+            $0.height.equalTo((bounds.height) / 2.56)
         }
         hotTextView.snp.makeConstraints {
-            $0.top.equalTo(hotImage.snp.bottom).inset(46)
+            $0.top.equalTo(hotImage.snp.bottom).inset(47)
             $0.centerX.equalTo(hotImage.snp.centerX).offset(0)
             $0.leading.equalToSuperview().inset(12)
             $0.width.equalTo((bounds.width) / 1.2)
