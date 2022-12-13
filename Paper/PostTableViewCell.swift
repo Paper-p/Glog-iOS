@@ -10,7 +10,7 @@ import SnapKit
 import Then
 
 class PostTableViewCell: UITableViewCell {
-    static let identifier = "PostTableViewCell"
+    static let identifier = "postCell"
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -28,14 +28,12 @@ class PostTableViewCell: UITableViewCell {
     }
     
     let titleLabel = UILabel().then {
-        $0.text = "유저 리서치(User Research)란?"
         $0.textColor = .white
         $0.font = UIFont.GlogFont(size: 18, family: .SemiBold)
         $0.textAlignment = .left
     }
     
     let subTitleLabel = UILabel().then {
-        $0.text = "일상에서 제품을 이해하고 사용하는데 영향을 미치는 사람의 ..."
         $0.textColor = UIColor(red: 156/255, green: 156/255, blue: 156/255, alpha: 1)
         $0.font = UIFont.GlogFont(size: 14, family: .Medium)
         $0.textAlignment = .left

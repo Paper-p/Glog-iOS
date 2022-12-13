@@ -12,7 +12,12 @@ import Then
 import SnapKit
 import Lottie
 
-class MainViewController: BaseViewController<MainViewModel>, UITableViewDelegate, UITableViewDataSource{
+struct Post {
+    var title: String
+    var subTitle: String
+}
+
+class MainViewController: BaseViewController<MainViewModel>{
 
     var postTableView: UITableView!
     
@@ -41,18 +46,12 @@ class MainViewController: BaseViewController<MainViewModel>, UITableViewDelegate
     }
     
     func settingTable() {
+        postTableView.register(PostTableViewCell.self, forCellReuseIdentifier: PostTableViewCell.identifier)
         postTableView.dataSource = self
         postTableView.delegate = self
-        postTableView.register(PostTableViewCell.self, forCellReuseIdentifier: PostTableViewCell.identifier)
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        <#code#>
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        <#code#>
-    }
+    let post: [Post] = [Post(title: "유저 리서치(User Research)란?", subTitle: "일상에서 제품을 이해하고 사용하는데 영향을 미치는 사람의 ...")]
     
     let scrollView = UIScrollView().then {
         $0.backgroundColor = .backgroundColor
@@ -114,7 +113,7 @@ class MainViewController: BaseViewController<MainViewModel>, UITableViewDelegate
         $0.textColor = .white
     }
     
-    let subtitleText = UILabel().then{
+    let subtitleText = UILabel().then {
         $0.text = "일상에서 제품을 이해하고 사용하는데 영향을 미\n치는 사람의 행위와 동기, 니즈를 특정 맥락 안..."
         $0.font = UIFont.GlogFont(size: 16, family: .Medium)
         $0.textColor = UIColor(red: 133/255, green: 136/255, blue: 141/255, alpha: 1)
@@ -154,7 +153,7 @@ class MainViewController: BaseViewController<MainViewModel>, UITableViewDelegate
         $0.layer.cornerRadius = 10
     }
     
-    lazy var searchTextField = UITextField().then{
+    lazy var searchTextField = UITextField().then {
         $0.backgroundColor = .textField
         $0.attributedPlaceholder = NSAttributedString(string: "찾고싶은 주제를 입력해주세요.", attributes: [NSAttributedString.Key.foregroundColor : UIColor(red: 1, green: 1, blue: 1, alpha: 0.48)])
         $0.textColor = UIColor(red: 1.00, green: 1.00, blue: 1.00, alpha: 0.48)
@@ -184,7 +183,7 @@ class MainViewController: BaseViewController<MainViewModel>, UITableViewDelegate
     func addScrollView() {
         [mainLottie,mainText,writeButton,hotButton,hotImage,hotTextView,titleText,subtitleText
          ,heartLabel,viewLabel,viewPostButton,searchTextField,
-         dotSortButton,lineSortButton,oneSortButton].forEach {
+         dotSortButton,lineSortButton,oneSortButton,postTableView].forEach {
             scrollView.addSubview($0)
         }
     }
@@ -283,6 +282,11 @@ class MainViewController: BaseViewController<MainViewModel>, UITableViewDelegate
             $0.leading.equalTo(lineSortButton.snp.trailing).offset(8)
             $0.height.equalTo(21)
             $0.width.equalTo(21)
+        }
+        postTableView.snp.makeConstraints {
+            $0.centerX.equalToSuperview()
+            $0.top.equalTo(searchTextField.snp.bottom).offset(20)
+            $0.leading.trailing.equalToSuperview().inset(12)
         }
     }
         
